@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D1065FA1E3BE494007D417F /* pushconfig.plist */; };
+		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
+		5DFF7AA21E3BAF6000356C66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* ViewController.swift */; };
+		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
+		5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */; };
+		5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */; };
+		C02796CF0A40AD4E7DF3BB17 /* Pods_Energyhack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Energyhack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.debug.xcconfig"; sourceTree = "<group>"; };
+		5D1065FA1E3BE494007D417F /* pushconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pushconfig.plist; sourceTree = "<group>"; };
+		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
+		5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energyhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5DFF7AA11E3BAF6000356C66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5DFF7AA41E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5DFF7AA91E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5DFF7AAB1E3BAF6000356C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DFF7A991E3BAF6000356C66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C02796CF0A40AD4E7DF3BB17 /* Pods_Energyhack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5DFF7A931E3BAF6000356C66 = {
+			isa = PBXGroup;
+			children = (
+				5DFF7A9E1E3BAF6000356C66 /* Energyhack */,
+				5DFF7A9D1E3BAF6000356C66 /* Products */,
+				A14452F0158F5871F5B670FF /* Pods */,
+				AA9E8512F84BB724A89F4436 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5DFF7A9D1E3BAF6000356C66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DFF7A9E1E3BAF6000356C66 /* Energyhack */ = {
+			isa = PBXGroup;
+			children = (
+				5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */,
+				5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */,
+				5DFF7AA11E3BAF6000356C66 /* ViewController.swift */,
+				5DFF7AA31E3BAF6000356C66 /* Main.storyboard */,
+				5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */,
+				5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */,
+				5DFF7AAB1E3BAF6000356C66 /* Info.plist */,
+				5D1065FA1E3BE494007D417F /* pushconfig.plist */,
+			);
+			path = Energyhack;
+			sourceTree = "<group>";
+		};
+		A14452F0158F5871F5B670FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */,
+				86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AA9E8512F84BB724A89F4436 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DFF7A9B1E3BAF6000356C66 /* Energyhack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Energyhack" */;
+			buildPhases = (
+				88F3AD959E887F473756A94E /* [CP] Check Pods Manifest.lock */,
+				5DFF7A981E3BAF6000356C66 /* Sources */,
+				5DFF7A991E3BAF6000356C66 /* Frameworks */,
+				5DFF7A9A1E3BAF6000356C66 /* Resources */,
+				5F9535BB281C1F6256BFC067 /* [CP] Embed Pods Frameworks */,
+				2FFDC98160EB997F95870AF9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Energyhack;
+			productName = Energyhack;
+			productReference = 5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DFF7A941E3BAF6000356C66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Community;
+				TargetAttributes = {
+					5DFF7A9B1E3BAF6000356C66 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8UGVNM2VM6;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Energyhack" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DFF7A931E3BAF6000356C66;
+			productRefGroup = 5DFF7A9D1E3BAF6000356C66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DFF7A9B1E3BAF6000356C66 /* Energyhack */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DFF7A9A1E3BAF6000356C66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */,
+				5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */,
+				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
+				5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FFDC98160EB997F95870AF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F9535BB281C1F6256BFC067 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88F3AD959E887F473756A94E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DFF7A981E3BAF6000356C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DFF7AA21E3BAF6000356C66 /* ViewController.swift in Sources */,
+				5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5DFF7AA31E3BAF6000356C66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DFF7AA41E3BAF6000356C66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DFF7AA91E3BAF6000356C66 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DFF7AAC1E3BAF6000356C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5DFF7AAD1E3BAF6000356C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DFF7AAF1E3BAF6000356C66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Energyhack/Energyhack.entitlements;
+				DEVELOPMENT_TEAM = 8UGVNM2VM6;
+				INFOPLIST_FILE = Energyhack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.community.energyhack.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5DFF7AB01E3BAF6000356C66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Energyhack/Energyhack.entitlements;
+				DEVELOPMENT_TEAM = 8UGVNM2VM6;
+				INFOPLIST_FILE = Energyhack/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.community.energyhack.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Energyhack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DFF7AAC1E3BAF6000356C66 /* Debug */,
+				5DFF7AAD1E3BAF6000356C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Energyhack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DFF7AAF1E3BAF6000356C66 /* Debug */,
+				5DFF7AB01E3BAF6000356C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5DFF7A941E3BAF6000356C66 /* Project object */;
+}
