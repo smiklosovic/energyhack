@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
 
     let AGNotificationCellIdentifier = "AGNotificationCell"
     var isRegistered = false
     var messages: Array<String> = []
+   
+    @IBAction func getSomeData() {
+        Alamofire.request("http://miklosovic.net:8080/api/distributors").responseJSON { response in
+            print(response.request ?? "request: nil")  // original URL request
+            print(response.response ?? "response: nil") // HTTP URL response
+            print(response.data ?? "data: nil")     // server data
+            print(response.result ?? "result: nil")   // result of response serialization
+            
+            if let JSON = response.result.value {
+                print("JSON: \(JSON)")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +73,6 @@ class ViewController: UIViewController {
             let msg = obj!["body"] as! String
             messages.append(msg)
         }
-        
 //        tableView.reloadData()
     }
 }

@@ -48,8 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 }
             }
         } else {
-            let notificationSettings = UIUserNotificationSettings(forTypes: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(notificationSettings)
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
         }
         
         return true
