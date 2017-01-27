@@ -1,0 +1,6 @@
+vypocitat aktualnu spotrebu ku dnu - priblizna
+    dve tarify
+            ak sa netriafam do rezervovanej je to drahsie
+            ak
+
+6 tarif - 6 dodavatelov
