@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import energyhack.dto.distributor.Distributors;
 import energyhack.service.EnergyHackApiClient;
 
 @RestController
@@ -15,9 +16,9 @@ public class EnergyHackController {
     @Autowired
     private EnergyHackApiClient energyHackApiClient;
 
-    @GetMapping("/test")
-    public ResponseEntity<String> getTest() {
+    @GetMapping(value = "/distributors", produces = "application/json")
+    public ResponseEntity<Distributors> getDistributors() {
 
-        return new ResponseEntity<>("test", OK);
+        return new ResponseEntity<>(energyHackApiClient.getDistributors(), OK);
     }
 }

@@ -38,7 +38,7 @@ public class EnergyHackApiClient {
     @Autowired
     private JsonSerializer jsonSerializer;
 
-    public String getServiceUrl() {
+    private String getServiceUrl() {
         return "https://api.energyhack.sk/";
     }
 
@@ -156,13 +156,13 @@ public class EnergyHackApiClient {
     // GET
     //
 
-    public <T> ResponseEntity<T> doGet(String path, Class<T> responseModel) {
+    private <T> ResponseEntity<T> doGet(String path, Class<T> responseModel) {
         return doGet(path, responseModel, getDefaultHeaders());
     }
 
-    public <T> ResponseEntity<T> doGet(String path,
-                                       Class<T> responseModel,
-                                       Map<String, ?> uriVariables) {
+    private <T> ResponseEntity<T> doGet(String path,
+                                        Class<T> responseModel,
+                                        Map<String, ?> uriVariables) {
 
         return restTemplate.exchange(getServiceUrl() + path,
                                      GET,
@@ -171,9 +171,9 @@ public class EnergyHackApiClient {
                                      uriVariables);
     }
 
-    public <T> ResponseEntity<T> doGet(String path,
-                                       Class<T> responseModel,
-                                       HttpHeaders httpHeaders) {
+    private <T> ResponseEntity<T> doGet(String path,
+                                        Class<T> responseModel,
+                                        HttpHeaders httpHeaders) {
 
         return restTemplate.exchange(path,
                                      GET,
