@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="a" transform="translate(-1.000000, -1.000000)">
+            <g id="Group" transform="translate(0.497000, 0.085000)">
+                <g>
+                    <g transform="translate(0.503000, 0.915000)" id="Rectangle-path" fill="#FF6E50">
+                        <rect x="0" y="0" width="40" height="40" rx="5"></rect>
+                    </g>
+                    <g transform="translate(11.341000, 14.566000)" id="Shape" fill="#FFFFFF">
+                        <g transform="translate(9.192000, 6.750000) rotate(180.000000) translate(-9.192000, -6.750000) translate(0.692000, 0.250000)">
+                            <polygon transform="translate(8.346000, 6.125000) rotate(-180.000000) translate(-8.346000, -6.125000) " points="0 5.5067062e-14 16.692 5.5067062e-14 8.346 12.25"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Artboard-1"></g>
+    </g>
+</svg>
