@@ -11,17 +11,20 @@ import Alamofire
 
 class DashboardViewController: UIViewController {
 
-    let AGNotificationCellIdentifier = "AGNotificationCell"
     var isRegistered = false
     var messages: Array<String> = []
+    var datePickerView: MonthPickerView?
+    var currentMonth: Int?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePickerCallerButton: UIButton!
     @IBOutlet weak var adviceCallerButton: UIButton!
-    var datePickerView: UIDatePicker?
     
     @IBAction func presentDatePicker() {
-        
+        datePickerView = MonthPickerView.loadFromNibNamed(nibNamed: "MonthPickerView") as! MonthPickerView?
+        datePickerView?.frame = CGRect(x: 0, y: view.bounds.size.height - (datePickerCallerButton.bounds.size.height * 4), width: view.bounds.size.width, height: datePickerCallerButton.bounds.size.height * 4)
+        view.addSubview(datePickerView!)
+        view.bringSubview(toFront: datePickerView!)
     }
     
     @IBAction func presentAdviceVC() {
@@ -51,7 +54,6 @@ class DashboardViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "DashboardInfoViewCell", bundle: nil), forCellReuseIdentifier: "DashboardInfoViewCell")
-        datePickerView = UIDatePicker()
     }
     
     func registered() {

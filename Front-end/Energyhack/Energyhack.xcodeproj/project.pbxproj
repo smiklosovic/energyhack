@@ -16,6 +16,8 @@
 		5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1066091E3C282B007D417F /* AdviceViewCell.xib */; };
 		5D10660E1E3C28BE007D417F /* AdviceHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */; };
 		5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */; };
+		5D2F3AED1E3C371F00B77FFE /* MonthPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */; };
+		5D2F3AEF1E3C374B00B77FFE /* MonthPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
 		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		5D1066091E3C282B007D417F /* AdviceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdviceViewCell.xib; sourceTree = "<group>"; };
 		5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceHeaderViewCell.swift; path = Assets.xcassets/AdviceHeaderViewCell.swift; sourceTree = "<group>"; };
 		5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdviceHeaderViewCell.xib; path = Assets.xcassets/AdviceHeaderViewCell.xib; sourceTree = "<group>"; };
+		5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPickerView.swift; sourceTree = "<group>"; };
+		5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthPickerView.xib; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
 		5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energyhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */,
 				5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */,
 				5D1066081E3C282B007D417F /* AdviceViewCell.swift */,
+				5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */,
+				5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */,
 				5D1066091E3C282B007D417F /* AdviceViewCell.xib */,
 				5DFF7AA31E3BAF6000356C66 /* Main.storyboard */,
 				5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */,
@@ -188,6 +194,7 @@
 				5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */,
 				5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */,
 				5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */,
+				5D2F3AEF1E3C374B00B77FFE /* MonthPickerView.xib in Resources */,
 				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
 				5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */,
 				5D1066031E3C220C007D417F /* DashboardInfoViewCell.xib in Resources */,
@@ -257,6 +264,7 @@
 				5D1066021E3C220C007D417F /* DashboardInfoViewCell.swift in Sources */,
 				5D10660A1E3C282B007D417F /* AdviceViewCell.swift in Sources */,
 				5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */,
+				5D2F3AED1E3C371F00B77FFE /* MonthPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
