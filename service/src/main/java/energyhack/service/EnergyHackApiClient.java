@@ -1,5 +1,6 @@
 package energyhack.service;
 
+import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
 import static org.springframework.http.HttpMethod.GET;
@@ -14,9 +15,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import energyhack.dto.distributor.Distributors;
+import energyhack.dto.measurements.Measurements;
 import energyhack.dto.meters.Address;
 import energyhack.dto.meters.Meter;
 import energyhack.dto.meters.MeterField;
@@ -129,25 +130,25 @@ public class EnergyHackApiClient {
     /// Measurements
     ///
 
-    public Meters getMeasurementsFromTo(String from, String to) {
+    public Measurements getMeasurementsFromTo(String meterId, String from, String to) {
 
-        final String uri = fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(format("%s/%s/%s/measurements", getServiceUrl(), "meters", meterId))
             .queryParam("from", from)
             .queryParam("to", to)
             .build().encode().toUriString();
 
-        return doGet(uri, Meters.class).getBody();
+        return doGet(uri, Measurements.class).getBody();
     }
 
-    public Meters getMeasurementsFromTo(String from, String to, MeterField... fields) {
+    public Measurements getMeasurementsFromTo(String meterId, String from, String to, MeterField... fields) {
 
-        final String uri = fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(format("%s/%s/%s/measurements", getServiceUrl(), "meters", meterId))
             .queryParam("from", from)
             .queryParam("to", to)
             .queryParam("fields", asList(fields).stream().map(MeterField::toString).collect(joining(",")))
             .build().encode().toUriString();
 
-        return doGet(uri, Meters.class).getBody();
+        return doGet(uri, Measurements.class).getBody();
     }
 
     //

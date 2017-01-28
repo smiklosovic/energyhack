@@ -10,6 +10,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import energyhack.dto.measurements.Measurements;
+import energyhack.dto.meters.MeterField;
 import energyhack.service.EnergyHackApiClient;
 import energyhack.configuration.DefaultTestAnnotations;
 import energyhack.dto.distributor.Distributors;
@@ -101,5 +103,31 @@ public class EnergyHackApiTest {
         final Meters metersWithTarif = energyHackApiClient.getMetersWithTarif(3);
 
         assertNotNull(metersWithTarif);
+    }
+
+    @Test
+    public void testGetMeasurementsFromTo() {
+
+        Meter meterDetail = energyHackApiClient.getMeter(1);
+
+        Measurements measurementsFromTo = energyHackApiClient.getMeasurementsFromTo(meterDetail.getMeter().getMeterID(),
+                                                                                    "01-2016", "02-2016");
+        assertNotNull(measurementsFromTo);
+    }
+
+    @Test
+    public void testGetMeasurementsFromToOther() {
+        Meter meterDetail = energyHackApiClient.getMeter(1);
+
+        Measurements measurementsFromTo = energyHackApiClient.getMeasurementsFromTo(meterDetail.getMeter().getMeterID(),
+                                                                                    "01-2016", "02-2016",
+                                                                                    MeterField.CONSUMPTION);
+
+        assertNotNull(measurementsFromTo);
+    }
+
+    @Test
+    public void testConsumptionCost() {
+
     }
 }
