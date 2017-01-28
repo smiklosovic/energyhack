@@ -24,13 +24,13 @@ public class PredictionService {
     @Autowired
     private EveryDayCostService everyDayCostService;
 
-    public List<Double> computePredictions(int day, List<Double> costsPerDay, int daysToFuture, int daysFromPast) {
+    public List<Double> computePredictions(int day, List<Double> averagePast, List<Double> costsPerDay, int daysToFuture, int daysFromPast) {
 
         List<Double> costs = new ArrayList<>(costsPerDay).subList(0, day);
 
         for (int i = 0; i < daysToFuture; i++) {
             double newPrediction = computeMovingAverage(costs, daysFromPast);
-            costs.add(newPrediction);
+            costs.add(averagePast.get(costs.size()-1) + (averagePast.get(costs.size()-1) - (averagePast.get(costs.size()-2))));
         }
 
         return costs.stream().skip(max(0, costs.size() - daysToFuture)).collect(toList());
@@ -44,7 +44,7 @@ public class PredictionService {
             .getAsDouble();
     }
 
-    private List<Double> computePredictions(Model model, Measurements... previousMeasurements) {
+    public List<Double> computePredictions(Model model, Measurements... previousMeasurements) {
 
         final List<List<Double>> costsForAllMonthPerEveryDay = asList(previousMeasurements).stream()
             .map(measurement -> everyDayCostService.computeCostForEveryDay(model, measurement))
@@ -53,7 +53,7 @@ public class PredictionService {
         return reduce(costsForAllMonthPerEveryDay);
     }
 
-    private List<Double> reduce(List<List<Double>> costsForAllMonthPerEveryDay) {
+    public List<Double> reduce(List<List<Double>> costsForAllMonthPerEveryDay) {
 
         double numberOfMonths = costsForAllMonthPerEveryDay.size();
 

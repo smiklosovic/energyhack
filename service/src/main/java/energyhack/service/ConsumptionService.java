@@ -54,7 +54,9 @@ public class ConsumptionService {
 
         List<Double> costEveryDay = everyDayCostService.computeCostForEveryDay(model, current);
 
-        final List<Double> predictions = predictionService.computePredictions(dayOfMonth, costEveryDay, 5, 5);
+        final List<Double> averagePast = predictionService.computePredictions(model, oneBack, twoBack, threeBack);
+
+        final List<Double> predictions = predictionService.computePredictions(dayOfMonth, averagePast, costEveryDay, 5, 2);
 
         consumptionGraph.setCurrent(costEveryDay);
         consumptionGraph.setPrediction(predictions);
