@@ -6,6 +6,8 @@ import org.jboss.aerogear.unifiedpush.message.UnifiedMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import energyhack.dto.Notification;
+
 /**
  * @author <a href="mailto:Stefan.Miklosovic@sk.ibm.com">Stefan Miklosovic</a>
  */
@@ -15,12 +17,12 @@ public class EnergyHackPushMessageSender {
     @Autowired
     private PushSender pushSender;
 
-    public void sendMessage(String message, MessageResponseCallback messageResponseCallback) {
-        sendMessage(getDefaultMessage(message), messageResponseCallback);
+    public void sendMessage(Notification notification, MessageResponseCallback messageResponseCallback) {
+        sendMessage(getDefaultMessage(notification), messageResponseCallback);
     }
 
-    public void sendMessage(String message) {
-        sendMessage(getDefaultMessage(message), null);
+    public void sendMessage(Notification notification) {
+        sendMessage(getDefaultMessage(notification), null);
     }
 
     public void sendMessage(UnifiedMessage unifiedMessage) {
@@ -36,9 +38,9 @@ public class EnergyHackPushMessageSender {
         }
     }
 
-    public UnifiedMessage getDefaultMessage(String message) {
+    public UnifiedMessage getDefaultMessage(Notification notification) {
         return UnifiedMessage.withMessage()
-            .alert(message)
+            .alert(notification.getNotification())
             .sound("default")
             .badge("1")
             .userData("some_key", "with_value")
