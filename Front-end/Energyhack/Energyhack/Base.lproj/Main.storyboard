@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="78" y="248"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--Pythia-->
         <scene sceneID="g0N-lt-XeU">
             <objects>
-                <viewController id="gVa-z3-FEw" customClass="DashboardViewController" customModule="Energyhack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gVa-z3-FEw" customClass="DashboardViewController" customModule="Pythia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dw7-6W-J8a"/>
                         <viewControllerLayoutGuide type="bottom" id="9Og-VG-iQS"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="O7d-Jx-YN9" firstAttribute="leading" secondItem="qZB-Ss-auA" secondAttribute="trailing" constant="1" id="sl3-gb-VuX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0pf-zG-c4p"/>
+                    <navigationItem key="navigationItem" title="Pythia" id="0pf-zG-c4p"/>
                     <connections>
                         <outlet property="adviceCallerButton" destination="O7d-Jx-YN9" id="C7X-tv-OVO"/>
                         <outlet property="datePickerCallerButton" destination="qZB-Ss-auA" id="bi6-48-oaq"/>
@@ -104,7 +104,7 @@
         <!--Advice View Controller-->
         <scene sceneID="mBt-XJ-zbP">
             <objects>
-                <viewController id="MZA-2y-MhK" customClass="AdviceViewController" customModule="Energyhack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MZA-2y-MhK" customClass="AdviceViewController" customModule="Pythia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="apO-j8-pqu"/>
                         <viewControllerLayoutGuide type="bottom" id="eIZ-dJ-TeG"/>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <navigationItem title="Title" id="oRU-lc-A1N">
+                                    <navigationItem title="Information" id="oRU-lc-A1N">
                                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="glg-iO-Qp2">
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="946.77661169415296"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Information-->
         <scene sceneID="l44-eC-pB4">
             <objects>
-                <viewController id="Qyt-Cb-ZlA" customClass="InfoViewController" customModule="Energyhack" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qyt-Cb-ZlA" customClass="InfoViewController" customModule="Pythia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H6M-uR-kYs"/>
                         <viewControllerLayoutGuide type="bottom" id="LGO-bU-IWD"/>
@@ -204,7 +204,7 @@
                             <constraint firstItem="LGO-bU-IWD" firstAttribute="top" secondItem="BlQ-iL-qg4" secondAttribute="bottom" constant="8" symbolic="YES" id="rwr-5m-m6s"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jGy-vA-Vaf"/>
+                    <navigationItem key="navigationItem" title="Information" id="jGy-vA-Vaf"/>
                     <connections>
                         <outlet property="detailTextView" destination="BlQ-iL-qg4" id="7Yw-G4-rQS"/>
                         <outlet property="subtitleLabel" destination="0FZ-a1-y5x" id="k8v-ZM-hJU"/>

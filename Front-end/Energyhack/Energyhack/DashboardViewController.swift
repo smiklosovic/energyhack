@@ -19,6 +19,7 @@ class DashboardViewController: UIViewController {
     var currentMonth: Int?
     var refreshControl: UIRefreshControl?
     var monthOverviewModel: MonthOverviewModel?
+    var months = ["Január","Február","Marec","Apríl","Máj","Jún","Júl","August","September","Október","November","December"]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePickerCallerButton: UIButton!
@@ -26,6 +27,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func presentDatePicker() {
         datePickerView = MonthPickerView.loadFromNibNamed(nibNamed: "MonthPickerView") as! MonthPickerView?
+        datePickerView?.months = months
         datePickerView?.currentMonth = currentMonth
         datePickerView?.frame = CGRect(x: 0, y: view.bounds.size.height - (datePickerCallerButton.bounds.size.height * 4), width: view.bounds.size.width, height: datePickerCallerButton.bounds.size.height * 4)
         view.addSubview(datePickerView!)
@@ -38,7 +40,7 @@ class DashboardViewController: UIViewController {
     
     func reloadEnergyData() {
         
-        Alamofire.request("http://marekkraus.sk:7777/getMonthOverview.json").responseObject { [unowned self] (response: DataResponse<MonthOverviewModel>) in
+        Alamofire.request("http://marekkraus.sk:7777/getMonthOverview.json?month=\(currentMonth! + 1)").responseObject { [unowned self] (response: DataResponse<MonthOverviewModel>) in
             
             self.monthOverviewModel = response.result.value
             print("response: \(self.monthOverviewModel?.consuptionPrice!)")
@@ -50,7 +52,7 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.selectMonth), name: Notification.Name(rawValue:"current_month"), object: nil)
-        currentMonth = 0
+        currentMonth = 1
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.registered), name: Notification.Name(rawValue:"success_registered"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.errorRegistration), name: Notification.Name(rawValue:"error_register"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.messageReceived(notification:)), name: Notification.Name(rawValue:"message_received"), object: nil)
@@ -63,14 +65,18 @@ class DashboardViewController: UIViewController {
         tableView.refreshControl?.addTarget(self, action: #selector(DashboardViewController.reloadEnergyData), for: .valueChanged)
         
         tableView.register(UINib(nibName: "DashboardInfoViewCell", bundle: nil), forCellReuseIdentifier: "DashboardInfoViewCell")
-        datePickerCallerButton.setTitle("Datum: ", for: .normal)
+        datePickerCallerButton.setTitle("Mesiac: \(months[0])", for: .normal)
         adviceCallerButton.setTitle("Zniž svoje náklady", for: .normal)
         
         reloadEnergyData()
     }
    
     func selectMonth(notification: Notification) {
-        reloadEnergyData()
+        if let monthNumber = notification.userInfo?["current_month"] as? Int {
+            currentMonth = monthNumber
+            datePickerCallerButton.setTitle("Mesiac: \(months[monthNumber])", for: .normal)
+            reloadEnergyData()
+        }
     }
     
     func reloadData() {
@@ -157,16 +163,16 @@ extension DashboardViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             cell.titleLabel.text = "Spotreba"
-            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.consuptionPrice!.amount!) €"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(round(100 * monthOverviewModel.consuptionPrice!.amount!)/100) €"
         case 1:
             cell.titleLabel.text = "Pokuta za jalovú elektrinu"
-            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.reactivePrice!.amount!) €"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(round(100 * monthOverviewModel.reactivePrice!.amount!)/100) €"
         case 2:
             cell.titleLabel.text = "Pokuta za prekročenie rezervy"
-            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.reservedPrice!.amount!) €"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(round(100 * monthOverviewModel.reservedPrice!.amount!)/100) €"
         case 3:
             cell.titleLabel.text = "Faktúra za tento mesiac"
-            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.finalPrice!.amount!) €"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(round(100 * monthOverviewModel.finalPrice!.amount!)/100) €"
         default:
             break
         }

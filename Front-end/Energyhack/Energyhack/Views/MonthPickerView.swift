@@ -12,13 +12,13 @@ class MonthPickerView: UIView {
     
     @IBOutlet weak var monthPicker: UIPickerView!
     @IBOutlet weak var doneButton: UIButton!
-    var months = ["Január","Február","Marec","Apríl","Máj","Jún","Júl","August","September","Október","November","December"]
+    var months:[String] = []
     var currentMonth:Int?
     var currentDay:Int?
     
     @IBAction func close() {
         currentMonth = monthPicker.selectedRow(inComponent: 0)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "current_month"), object: nil, userInfo: ["CurrentMonth":currentMonth ?? 0])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "current_month"), object: nil, userInfo: ["current_month":currentMonth ?? 0])
         removeFromSuperview()
     }
     

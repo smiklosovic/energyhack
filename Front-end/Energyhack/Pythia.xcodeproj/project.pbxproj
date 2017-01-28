@@ -20,6 +20,7 @@
 		5D2F3B041E3C5ABD00B77FFE /* DashboardInfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */; };
 		5D2F3B061E3C5B1A00B77FFE /* MonthOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */; };
 		5D2F3B081E3C5BBB00B77FFE /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B071E3C5BBB00B77FFE /* Price.swift */; };
+		5D2F3B0F1E3CA38F00B77FFE /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3B0E1E3CA38F00B77FFE /* assets */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
 		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
@@ -44,8 +45,9 @@
 		5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoViewCell.xib; sourceTree = "<group>"; };
 		5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthOverviewModel.swift; sourceTree = "<group>"; };
 		5D2F3B071E3C5BBB00B77FFE /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		5D2F3B0E1E3CA38F00B77FFE /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../../assets; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
-		5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energyhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DFF7A9C1E3BAF6000356C66 /* Pythia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pythia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		5DFF7AA41E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		5DFF7A9D1E3BAF6000356C66 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */,
+				5DFF7A9C1E3BAF6000356C66 /* Pythia.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 		5DFF7A9E1E3BAF6000356C66 /* Energyhack */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F3B0E1E3CA38F00B77FFE /* assets */,
 				5D2F3AF21E3C5ABC00B77FFE /* Views */,
 				5D2F3AF51E3C5ABC00B77FFE /* TableViewCells */,
 				5D2F3AFC1E3C5ABC00B77FFE /* Models */,
@@ -156,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5DFF7A9B1E3BAF6000356C66 /* Energyhack */ = {
+		5DFF7A9B1E3BAF6000356C66 /* Pythia */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Energyhack" */;
+			buildConfigurationList = 5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Pythia" */;
 			buildPhases = (
 				88F3AD959E887F473756A94E /* [CP] Check Pods Manifest.lock */,
 				5DFF7A981E3BAF6000356C66 /* Sources */,
@@ -171,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = Energyhack;
+			name = Pythia;
 			productName = Energyhack;
-			productReference = 5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */;
+			productReference = 5DFF7A9C1E3BAF6000356C66 /* Pythia.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,7 +201,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Energyhack" */;
+			buildConfigurationList = 5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Pythia" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -211,7 +214,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5DFF7A9B1E3BAF6000356C66 /* Energyhack */,
+				5DFF7A9B1E3BAF6000356C66 /* Pythia */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +227,7 @@
 				5D2F3B021E3C5ABD00B77FFE /* AdviceViewCell.xib in Resources */,
 				5D2F3B041E3C5ABD00B77FFE /* DashboardInfoViewCell.xib in Resources */,
 				5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */,
+				5D2F3B0F1E3CA38F00B77FFE /* assets in Resources */,
 				5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */,
 				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
 				5D2F3B001E3C5ABD00B77FFE /* AdviceHeaderViewCell.xib in Resources */,
@@ -446,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Energyhack" */ = {
+		5DFF7A971E3BAF6000356C66 /* Build configuration list for PBXProject "Pythia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DFF7AAC1E3BAF6000356C66 /* Debug */,
@@ -455,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Energyhack" */ = {
+		5DFF7AAE1E3BAF6000356C66 /* Build configuration list for PBXNativeTarget "Pythia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DFF7AAF1E3BAF6000356C66 /* Debug */,
