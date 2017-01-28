@@ -8,8 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D1065FA1E3BE494007D417F /* pushconfig.plist */; };
+		5D1066021E3C220C007D417F /* DashboardInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */; };
+		5D1066031E3C220C007D417F /* DashboardInfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */; };
+		5D1066051E3C25BE007D417F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066041E3C25BE007D417F /* InfoViewController.swift */; };
+		5D1066071E3C25F5007D417F /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066061E3C25F5007D417F /* AdviceViewController.swift */; };
+		5D10660A1E3C282B007D417F /* AdviceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066081E3C282B007D417F /* AdviceViewCell.swift */; };
+		5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1066091E3C282B007D417F /* AdviceViewCell.xib */; };
+		5D10660E1E3C28BE007D417F /* AdviceHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */; };
+		5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
-		5DFF7AA21E3BAF6000356C66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* ViewController.swift */; };
+		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
 		5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */; };
 		5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */; };
@@ -20,10 +28,18 @@
 		1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Energyhack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1065FA1E3BE494007D417F /* pushconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pushconfig.plist; sourceTree = "<group>"; };
+		5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInfoViewCell.swift; sourceTree = "<group>"; };
+		5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoViewCell.xib; sourceTree = "<group>"; };
+		5D1066041E3C25BE007D417F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		5D1066061E3C25F5007D417F /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
+		5D1066081E3C282B007D417F /* AdviceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewCell.swift; sourceTree = "<group>"; };
+		5D1066091E3C282B007D417F /* AdviceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdviceViewCell.xib; sourceTree = "<group>"; };
+		5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceHeaderViewCell.swift; path = Assets.xcassets/AdviceHeaderViewCell.swift; sourceTree = "<group>"; };
+		5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdviceHeaderViewCell.xib; path = Assets.xcassets/AdviceHeaderViewCell.xib; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
 		5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energyhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5DFF7AA11E3BAF6000356C66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		5DFF7AA41E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DFF7AA91E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,7 +82,15 @@
 			children = (
 				5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */,
 				5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */,
-				5DFF7AA11E3BAF6000356C66 /* ViewController.swift */,
+				5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */,
+				5D1066041E3C25BE007D417F /* InfoViewController.swift */,
+				5D1066061E3C25F5007D417F /* AdviceViewController.swift */,
+				5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */,
+				5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */,
+				5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */,
+				5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */,
+				5D1066081E3C282B007D417F /* AdviceViewCell.swift */,
+				5D1066091E3C282B007D417F /* AdviceViewCell.xib */,
 				5DFF7AA31E3BAF6000356C66 /* Main.storyboard */,
 				5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */,
 				5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */,
@@ -163,7 +187,10 @@
 			files = (
 				5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */,
 				5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */,
+				5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */,
 				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
+				5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */,
+				5D1066031E3C220C007D417F /* DashboardInfoViewCell.xib in Resources */,
 				5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,7 +250,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DFF7AA21E3BAF6000356C66 /* ViewController.swift in Sources */,
+				5D10660E1E3C28BE007D417F /* AdviceHeaderViewCell.swift in Sources */,
+				5D1066071E3C25F5007D417F /* AdviceViewController.swift in Sources */,
+				5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */,
+				5D1066051E3C25BE007D417F /* InfoViewController.swift in Sources */,
+				5D1066021E3C220C007D417F /* DashboardInfoViewCell.swift in Sources */,
+				5D10660A1E3C282B007D417F /* AdviceViewCell.swift in Sources */,
 				5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
