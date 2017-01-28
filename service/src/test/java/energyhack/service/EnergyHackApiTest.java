@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import energyhack.dto.ConsumptionGraph;
 import energyhack.dto.measurements.Measurements;
 import energyhack.dto.meters.MeterField;
 import energyhack.model.Model;
@@ -28,6 +29,12 @@ public class EnergyHackApiTest {
 
     @Autowired
     private EnergyHackApiClient energyHackApiClient;
+
+    @Autowired
+    private EveryDayCostService everyDayCostService;
+
+    @Autowired
+    private ConsumptionService consumptionService;
 
     @Test
     public void testGetDistributors() {
@@ -171,6 +178,10 @@ public class EnergyHackApiTest {
         // 9 - tax
 
         final double tax = model.getTax(measurementsFromTo);
+
+        final List<Double> costForEveryDay = everyDayCostService.computeCostForEveryDay(model, measurementsFromTo);
+
+        ConsumptionGraph consumptionGraph = consumptionService.getConsumptionGraph(1, 6, 15);
 
         System.out.println("end");
     }

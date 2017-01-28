@@ -21,6 +21,7 @@ import energyhack.dto.measurements.Measurements;
 import energyhack.dto.meters.Address;
 import energyhack.dto.meters.Meter;
 import energyhack.dto.meters.MeterField;
+import energyhack.dto.meters.MeterObject;
 import energyhack.dto.meters.Meters;
 import energyhack.dto.supplier.Suppliers;
 import energyhack.utils.JsonSerializer;
@@ -63,6 +64,10 @@ public class EnergyHackApiClient {
 
     public Meter getMeter(int meterID) {
         return doGet(getServiceUrl() + "meters/" + meterID, Meter.class).getBody();
+    }
+
+    public MeterObject getMeterObject(int meterID) {
+        return getMeter(meterID).getMeter();
     }
 
     public Meters getMeters() {
@@ -130,7 +135,7 @@ public class EnergyHackApiClient {
     /// Measurements
     ///
 
-    public Measurements getMeasurementsFromTo(String meterId, String from, String to) {
+    public Measurements getMeasurementsFromTo(int meterId, String from, String to) {
 
         final String uri = fromHttpUrl(format("%s/%s/%s/measurements", getServiceUrl(), "meters", meterId))
             .queryParam("from", from)
@@ -138,6 +143,10 @@ public class EnergyHackApiClient {
             .build().encode().toUriString();
 
         return doGet(uri, Measurements.class).getBody();
+    }
+
+    public Measurements getMeasurementsFromTo(String meterId, String from, String to) {
+        return getMeasurementsFromTo(Integer.parseInt(meterId), from, to);
     }
 
     public Measurements getMeasurementsFromTo(String meterId, String from, String to, MeterField... fields) {

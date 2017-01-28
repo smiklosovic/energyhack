@@ -48,11 +48,11 @@ public class Model {
         return this;
     }
 
-    public MeterObject getMeter(int meterID) {
+    MeterObject getMeter(int meterID) {
         return energyHackApiClient.getMeter(meterID).getMeter();
     }
 
-    public Supplier getSupplier() {
+    Supplier getSupplier() {
         final List<Supplier> suppliers = energyHackApiClient
             .getSuppliers()
             .getSuppliers()
@@ -63,7 +63,7 @@ public class Model {
         return suppliers.size() > 0 ? suppliers.get(0) : null;
     }
 
-    public Distributor getDistributor() {
+    Distributor getDistributor() {
         final List<Distributor> distributors = energyHackApiClient
             .getDistributors()
             .getDistributors()
