@@ -24,6 +24,18 @@ public class PredictionService {
     @Autowired
     private EveryDayCostService everyDayCostService;
 
+    public List<Double> computeConsumptionPredictions(int day, List<Double> averagePast, List<Double> consumptions, int daysToFuture, int daysFromPast) {
+
+        List<Double> costs = new ArrayList<>(consumptions).subList(0, day);
+
+        for (int i = 0; i < daysToFuture; i++) {
+            double newPrediction = computeMovingAverage(costs, daysFromPast);
+            costs.add(averagePast.get(costs.size()-1) + (averagePast.get(costs.size()-1) - (averagePast.get(costs.size()-2))));
+        }
+
+        return costs.stream().skip(max(0, costs.size() - daysToFuture)).collect(toList());
+    }
+
     public List<Double> computePredictions(int day, List<Double> averagePast, List<Double> costsPerDay, int daysToFuture, int daysFromPast) {
 
         List<Double> costs = new ArrayList<>(costsPerDay).subList(0, day);

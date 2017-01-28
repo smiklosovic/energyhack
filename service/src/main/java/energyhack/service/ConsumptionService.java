@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import energyhack.dto.ConsumptionGraph;
-import energyhack.dto.measurements.Measurement;
+import energyhack.dto.ConsumptionPriceGraph;
 import energyhack.dto.measurements.Measurements;
-import energyhack.dto.meters.Meter;
+import energyhack.dto.meters.MeterField;
 import energyhack.dto.meters.MeterObject;
 import energyhack.model.Model;
 
@@ -31,7 +31,26 @@ public class ConsumptionService {
     @Autowired
     private PredictionService predictionService;
 
-    public ConsumptionGraph getConsumptionGraph(int meterId, int month, int dayOfMonth) {
+    public ConsumptionGraph getConsumptionGraph(int meterId, int month) {
+
+        String from = format("%02d-2016", month);
+
+        final Measurements measurementsFromTo = energyHackApiClient.getMeasurementsFromTo(String.valueOf(meterId),
+                                                                                          from, from,
+                                                                                          MeterField.CONSUMPTION);
+
+        final List<Double> collect = measurementsFromTo.getMeasurements()
+            .stream()
+            .map(measurement -> measurement.getLowConsumptionSum() + measurement.getHighConsumptionSum())
+            .collect(toList());
+
+        ConsumptionGraph consumptionGraph = new ConsumptionGraph();
+        consumptionGraph.setValues(collect);
+
+        return consumptionGraph;
+    }
+
+    public ConsumptionPriceGraph getConsumptionPriceGraph(int meterId, int month, int dayOfMonth) {
 
         final MeterObject meterObject = energyHackApiClient.getMeterObject(meterId);
 
@@ -50,13 +69,14 @@ public class ConsumptionService {
 
         Measurements threeBack = slice(getMeasurements(meterId, threeMonthsBackMonth));
 
-        ConsumptionGraph consumptionGraph = new ConsumptionGraph();
+        ConsumptionPriceGraph consumptionGraph = new ConsumptionPriceGraph();
 
         List<Double> costEveryDay = everyDayCostService.computeCostForEveryDay(model, current);
 
         final List<Double> averagePast = predictionService.computePredictions(model, oneBack, twoBack, threeBack);
 
-        final List<Double> predictions = predictionService.computePredictions(dayOfMonth, averagePast, costEveryDay, 5, 2);
+        final List<Double> predictions =
+            predictionService.computePredictions(dayOfMonth, averagePast, costEveryDay, 5, 2);
 
         consumptionGraph.setCurrent(costEveryDay);
         consumptionGraph.setPrediction(predictions);

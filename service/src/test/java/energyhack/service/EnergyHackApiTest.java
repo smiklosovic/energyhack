@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import energyhack.dto.ConsumptionGraph;
+import energyhack.dto.ConsumptionPriceGraph;
 import energyhack.dto.measurements.Measurements;
 import energyhack.dto.meters.MeterField;
 import energyhack.model.Model;
@@ -181,7 +181,7 @@ public class EnergyHackApiTest {
 
         final List<Double> costForEveryDay = everyDayCostService.computeCostForEveryDay(model, measurementsFromTo);
 
-        ConsumptionGraph consumptionGraph = consumptionService.getConsumptionGraph(1, 6, 15);
+        ConsumptionPriceGraph consumptionGraph = consumptionService.getConsumptionPriceGraph(1, 6, 15);
 
         System.out.println("end");
     }

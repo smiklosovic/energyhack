@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import energyhack.dto.ConsumptionGraph;
+import energyhack.dto.ConsumptionPriceGraph;
 import energyhack.dto.Notification;
 import energyhack.dto.distributor.Distributors;
 import energyhack.service.ConsumptionService;
@@ -45,20 +46,31 @@ public class EnergyHackController {
         return new ResponseEntity<>(energyHackApiClient.getDistributors(), OK);
     }
 
-    @GetMapping(value = "/grafSpotreba/{meterId}/{month}/{dayOfMonth}")
+    @GetMapping(value = "/grafSpotreba/{meterId}/{month}")
     public ResponseEntity<ConsumptionGraph> getConsumptionGraph(@PathVariable int meterId,
-                                                                @PathVariable int month,
-                                                                @PathVariable int dayOfMonth) {
+                                                                @PathVariable int month) {
 
-        ConsumptionGraph consumptionGraph = consumptionService.getConsumptionGraph(meterId, month, dayOfMonth);
+        ConsumptionGraph consumptionGraph = consumptionService.getConsumptionGraph(meterId, month);
 
         return new ResponseEntity<>(consumptionGraph, OK);
     }
 
-    @GetMapping(value = "/grafSpotreba/{meterId}/{month}")
-    public ResponseEntity<ConsumptionGraph> getConsumptionGraph(@PathVariable int meterId, @PathVariable int month) {
+    @GetMapping(value = "/grafSpotrebaCena/{meterId}/{month}/{dayOfMonth}")
+    public ResponseEntity<ConsumptionPriceGraph> getConsumptionPriceGraph(@PathVariable int meterId,
+                                                                          @PathVariable int month,
+                                                                          @PathVariable int dayOfMonth) {
 
-        ConsumptionGraph consumptionGraph = consumptionService.getConsumptionGraph(meterId, month, 15);
+        ConsumptionPriceGraph consumptionGraph =
+            consumptionService.getConsumptionPriceGraph(meterId, month, dayOfMonth);
+
+        return new ResponseEntity<>(consumptionGraph, OK);
+    }
+
+    @GetMapping(value = "/grafSpotrebaCena/{meterId}/{month}")
+    public ResponseEntity<ConsumptionPriceGraph> getConsumptionPriceGraph(@PathVariable int meterId,
+                                                                          @PathVariable int month) {
+
+        ConsumptionPriceGraph consumptionGraph = consumptionService.getConsumptionPriceGraph(meterId, month, 15);
 
         return new ResponseEntity<>(consumptionGraph, OK);
     }

@@ -10,8 +10,11 @@ import lombok.Data;
  * @author <a href="mailto:Stefan.Miklosovic@sk.ibm.com">Stefan Miklosovic</a>
  */
 @Data
-public class ConsumptionGraph {
+public class ConsumptionPriceGraph {
 
     @JsonProperty
-    private List<Double> values;
+    private List<Double> current;
+
+    @JsonProperty
+    private List<Double> prediction;
 }
