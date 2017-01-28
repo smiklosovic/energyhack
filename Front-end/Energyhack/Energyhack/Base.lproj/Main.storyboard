@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -40,11 +41,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iTn-ve-evp">
-                                <rect key="frame" x="0.0" y="64" width="375" height="540"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-Jx-YN9">
-                                <rect key="frame" x="188" y="606" width="187" height="61"/>
+                                <rect key="frame" x="188" y="605" width="187" height="62"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.7725490196" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="187" id="uyp-7U-o5r"/>
@@ -57,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZB-Ss-auA">
-                                <rect key="frame" x="0.0" y="606" width="187" height="61"/>
+                                <rect key="frame" x="0.0" y="605" width="187" height="62"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.7725490196" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="187" id="m8L-0m-fb7"/>
@@ -75,14 +76,14 @@
                             <constraint firstItem="qZB-Ss-auA" firstAttribute="top" secondItem="O7d-Jx-YN9" secondAttribute="top" id="0Nk-Rv-A65"/>
                             <constraint firstItem="O7d-Jx-YN9" firstAttribute="width" secondItem="qZB-Ss-auA" secondAttribute="width" id="2wF-9N-vD3"/>
                             <constraint firstItem="iTn-ve-evp" firstAttribute="trailing" secondItem="O7d-Jx-YN9" secondAttribute="trailing" id="9d9-v7-IcJ"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="top" secondItem="dw7-6W-J8a" secondAttribute="bottom" id="H98-eM-okW"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="top" secondItem="dw7-6W-J8a" secondAttribute="bottom" constant="-64" id="H98-eM-okW"/>
                             <constraint firstItem="qZB-Ss-auA" firstAttribute="baseline" secondItem="O7d-Jx-YN9" secondAttribute="firstBaseline" id="MZ1-AY-fU4"/>
                             <constraint firstAttribute="trailing" secondItem="iTn-ve-evp" secondAttribute="trailing" id="Now-Bu-TQ8"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="centerY" secondItem="No6-y3-1P8" secondAttribute="centerY" id="VVu-xk-nJR"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="centerY" secondItem="No6-y3-1P8" secondAttribute="centerY" constant="-31.5" id="VVu-xk-nJR"/>
                             <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="qZB-Ss-auA" secondAttribute="leading" id="dcm-pj-ELC"/>
                             <constraint firstItem="O7d-Jx-YN9" firstAttribute="baseline" secondItem="qZB-Ss-auA" secondAttribute="firstBaseline" id="fL7-IA-bwD"/>
                             <constraint firstItem="qZB-Ss-auA" firstAttribute="bottom" secondItem="9Og-VG-iQS" secondAttribute="top" id="jRC-rv-tSi"/>
-                            <constraint firstItem="qZB-Ss-auA" firstAttribute="top" secondItem="iTn-ve-evp" secondAttribute="bottom" constant="2" id="jp2-KG-KxN"/>
+                            <constraint firstItem="qZB-Ss-auA" firstAttribute="top" secondItem="iTn-ve-evp" secondAttribute="bottom" constant="1" id="jp2-KG-KxN"/>
                             <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="No6-y3-1P8" secondAttribute="leading" id="rEH-G1-GxB"/>
                             <constraint firstItem="O7d-Jx-YN9" firstAttribute="leading" secondItem="qZB-Ss-auA" secondAttribute="trailing" constant="1" id="sl3-gb-VuX"/>
                         </constraints>

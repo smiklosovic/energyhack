@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 class DashboardViewController: UIViewController {
 
@@ -15,6 +17,8 @@ class DashboardViewController: UIViewController {
     var messages: Array<String> = []
     var datePickerView: MonthPickerView?
     var currentMonth: Int?
+    var refreshControl: UIRefreshControl?
+    var monthOverviewModel: MonthOverviewModel?
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePickerCallerButton: UIButton!
@@ -22,6 +26,7 @@ class DashboardViewController: UIViewController {
     
     @IBAction func presentDatePicker() {
         datePickerView = MonthPickerView.loadFromNibNamed(nibNamed: "MonthPickerView") as! MonthPickerView?
+        datePickerView?.currentMonth = currentMonth
         datePickerView?.frame = CGRect(x: 0, y: view.bounds.size.height - (datePickerCallerButton.bounds.size.height * 4), width: view.bounds.size.width, height: datePickerCallerButton.bounds.size.height * 4)
         view.addSubview(datePickerView!)
         view.bringSubview(toFront: datePickerView!)
@@ -31,30 +36,58 @@ class DashboardViewController: UIViewController {
         performSegue(withIdentifier: "adviceScreenSegue", sender: self)
     }
     
-    @IBAction func present() {
-        Alamofire.request("http://miklosovic.net:8080/api/distributors").responseJSON { response in
-            print(response.request ?? "request: nil")  // original URL request
-            print(response.response ?? "response: nil") // HTTP URL response
-            print(response.data ?? "data: nil")     // server data
-            print(response.result)   // result of response serialization
+    func reloadEnergyData() {
+        
+        Alamofire.request("http://marekkraus.sk:7777/getMonthOverview.json").responseObject { [unowned self] (response: DataResponse<MonthOverviewModel>) in
             
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
-            }
+            self.monthOverviewModel = response.result.value
+            print("response: \(self.monthOverviewModel?.consuptionPrice!)")
+            self.performSelector(onMainThread: #selector(DashboardViewController.reloadData), with: nil, waitUntilDone: false)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.selectMonth), name: Notification.Name(rawValue:"current_month"), object: nil)
+        currentMonth = 0
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.registered), name: Notification.Name(rawValue:"success_registered"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.errorRegistration), name: Notification.Name(rawValue:"error_register"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.messageReceived(notification:)), name: Notification.Name(rawValue:"message_received"), object: nil)
-       
+        
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.backgroundColor = UIColor.white
+        tableView.refreshControl?.tintColor = UIColor.black
+        tableView.refreshControl?.addTarget(self, action: #selector(DashboardViewController.reloadEnergyData), for: .valueChanged)
+        
         tableView.register(UINib(nibName: "DashboardInfoViewCell", bundle: nil), forCellReuseIdentifier: "DashboardInfoViewCell")
+        datePickerCallerButton.setTitle("Datum: ", for: .normal)
+        adviceCallerButton.setTitle("Zniž svoje náklady", for: .normal)
+        
+        reloadEnergyData()
     }
+   
+    func selectMonth(notification: Notification) {
+        reloadEnergyData()
+    }
+    
+    func reloadData() {
+    
+        if let refreshControl = tableView.refreshControl {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM d, h:mm a"
+            let title = "Last update:\(formatter.string(from: Date()))" //[formatter stringFromDate:[NSDate date]]];
+            let attrsDictionary =  [NSForegroundColorAttributeName:UIColor.black]
+            let attributedTitle = NSAttributedString(string: title, attributes: attrsDictionary)
+            refreshControl.attributedTitle = attributedTitle
+            refreshControl.endRefreshing()
+        }
+        
+        tableView.reloadData()
+    }
+
     
     func registered() {
         print("registered")
@@ -72,7 +105,7 @@ class DashboardViewController: UIViewController {
         }
         
         isRegistered = true
-//        tableView.reloadData()
+        reloadEnergyData()
     }
 
     
@@ -93,7 +126,7 @@ class DashboardViewController: UIViewController {
             let msg = obj!["body"] as! String
             messages.append(msg)
         }
-//        tableView.reloadData()
+        reloadEnergyData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -108,12 +141,37 @@ extension DashboardViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if let _ = monthOverviewModel {
+            return 4
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        guard let monthOverviewModel = monthOverviewModel else { fatalError("model was lost!") }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardInfoViewCell", for: indexPath) as! DashboardInfoViewCell
+        
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = "Spotreba"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.consuptionPrice!.amount!) €"
+        case 1:
+            cell.titleLabel.text = "Pokuta za jalovú elektrinu"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.reactivePrice!.amount!) €"
+        case 2:
+            cell.titleLabel.text = "Pokuta za prekročenie rezervy"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.reservedPrice!.amount!) €"
+        case 3:
+            cell.titleLabel.text = "Faktúra za tento mesiac"
+            cell.currentAmountLabel.text = "ku dnešnému dňu: \(monthOverviewModel.finalPrice!.amount!) €"
+        default:
+            break
+        }
+        
+        cell.selectionStyle = .none
         return cell
     }
     

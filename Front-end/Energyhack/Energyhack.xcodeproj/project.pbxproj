@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D1065FA1E3BE494007D417F /* pushconfig.plist */; };
-		5D1066021E3C220C007D417F /* DashboardInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */; };
-		5D1066031E3C220C007D417F /* DashboardInfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */; };
 		5D1066051E3C25BE007D417F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066041E3C25BE007D417F /* InfoViewController.swift */; };
 		5D1066071E3C25F5007D417F /* AdviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066061E3C25F5007D417F /* AdviceViewController.swift */; };
-		5D10660A1E3C282B007D417F /* AdviceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1066081E3C282B007D417F /* AdviceViewCell.swift */; };
-		5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1066091E3C282B007D417F /* AdviceViewCell.xib */; };
-		5D10660E1E3C28BE007D417F /* AdviceHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */; };
-		5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */; };
-		5D2F3AED1E3C371F00B77FFE /* MonthPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */; };
-		5D2F3AEF1E3C374B00B77FFE /* MonthPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */; };
+		5D2F3AFD1E3C5ABC00B77FFE /* MonthPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF31E3C5ABC00B77FFE /* MonthPickerView.swift */; };
+		5D2F3AFE1E3C5ABC00B77FFE /* MonthPickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF41E3C5ABC00B77FFE /* MonthPickerView.xib */; };
+		5D2F3AFF1E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF61E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift */; };
+		5D2F3B001E3C5ABD00B77FFE /* AdviceHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF71E3C5ABC00B77FFE /* AdviceHeaderViewCell.xib */; };
+		5D2F3B011E3C5ABD00B77FFE /* AdviceViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF81E3C5ABC00B77FFE /* AdviceViewCell.swift */; };
+		5D2F3B021E3C5ABD00B77FFE /* AdviceViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AF91E3C5ABC00B77FFE /* AdviceViewCell.xib */; };
+		5D2F3B031E3C5ABD00B77FFE /* DashboardInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */; };
+		5D2F3B041E3C5ABD00B77FFE /* DashboardInfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */; };
+		5D2F3B061E3C5B1A00B77FFE /* MonthOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */; };
+		5D2F3B081E3C5BBB00B77FFE /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B071E3C5BBB00B77FFE /* Price.swift */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
 		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
@@ -30,16 +32,18 @@
 		1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Energyhack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1065FA1E3BE494007D417F /* pushconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pushconfig.plist; sourceTree = "<group>"; };
-		5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInfoViewCell.swift; sourceTree = "<group>"; };
-		5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoViewCell.xib; sourceTree = "<group>"; };
 		5D1066041E3C25BE007D417F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		5D1066061E3C25F5007D417F /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
-		5D1066081E3C282B007D417F /* AdviceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewCell.swift; sourceTree = "<group>"; };
-		5D1066091E3C282B007D417F /* AdviceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdviceViewCell.xib; sourceTree = "<group>"; };
-		5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdviceHeaderViewCell.swift; path = Assets.xcassets/AdviceHeaderViewCell.swift; sourceTree = "<group>"; };
-		5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdviceHeaderViewCell.xib; path = Assets.xcassets/AdviceHeaderViewCell.xib; sourceTree = "<group>"; };
-		5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPickerView.swift; sourceTree = "<group>"; };
-		5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthPickerView.xib; sourceTree = "<group>"; };
+		5D2F3AF31E3C5ABC00B77FFE /* MonthPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthPickerView.swift; sourceTree = "<group>"; };
+		5D2F3AF41E3C5ABC00B77FFE /* MonthPickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthPickerView.xib; sourceTree = "<group>"; };
+		5D2F3AF61E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceHeaderViewCell.swift; sourceTree = "<group>"; };
+		5D2F3AF71E3C5ABC00B77FFE /* AdviceHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdviceHeaderViewCell.xib; sourceTree = "<group>"; };
+		5D2F3AF81E3C5ABC00B77FFE /* AdviceViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewCell.swift; sourceTree = "<group>"; };
+		5D2F3AF91E3C5ABC00B77FFE /* AdviceViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdviceViewCell.xib; sourceTree = "<group>"; };
+		5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInfoViewCell.swift; sourceTree = "<group>"; };
+		5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoViewCell.xib; sourceTree = "<group>"; };
+		5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthOverviewModel.swift; sourceTree = "<group>"; };
+		5D2F3B071E3C5BBB00B77FFE /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
 		5DFF7A9C1E3BAF6000356C66 /* Energyhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Energyhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D2F3AF21E3C5ABC00B77FFE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F3AF31E3C5ABC00B77FFE /* MonthPickerView.swift */,
+				5D2F3AF41E3C5ABC00B77FFE /* MonthPickerView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D2F3AF51E3C5ABC00B77FFE /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F3AF61E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift */,
+				5D2F3AF71E3C5ABC00B77FFE /* AdviceHeaderViewCell.xib */,
+				5D2F3AF81E3C5ABC00B77FFE /* AdviceViewCell.swift */,
+				5D2F3AF91E3C5ABC00B77FFE /* AdviceViewCell.xib */,
+				5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */,
+				5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		5D2F3AFC1E3C5ABC00B77FFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */,
+				5D2F3B071E3C5BBB00B77FFE /* Price.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5DFF7A931E3BAF6000356C66 = {
 			isa = PBXGroup;
 			children = (
@@ -84,22 +119,17 @@
 		5DFF7A9E1E3BAF6000356C66 /* Energyhack */ = {
 			isa = PBXGroup;
 			children = (
-				5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */,
+				5D2F3AF21E3C5ABC00B77FFE /* Views */,
+				5D2F3AF51E3C5ABC00B77FFE /* TableViewCells */,
+				5D2F3AFC1E3C5ABC00B77FFE /* Models */,
 				5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */,
 				5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */,
 				5D1066041E3C25BE007D417F /* InfoViewController.swift */,
 				5D1066061E3C25F5007D417F /* AdviceViewController.swift */,
-				5D1066001E3C220C007D417F /* DashboardInfoViewCell.swift */,
-				5D1066011E3C220C007D417F /* DashboardInfoViewCell.xib */,
-				5D10660C1E3C28BE007D417F /* AdviceHeaderViewCell.swift */,
-				5D10660D1E3C28BE007D417F /* AdviceHeaderViewCell.xib */,
-				5D1066081E3C282B007D417F /* AdviceViewCell.swift */,
-				5D2F3AEC1E3C371F00B77FFE /* MonthPickerView.swift */,
-				5D2F3AEE1E3C374B00B77FFE /* MonthPickerView.xib */,
-				5D1066091E3C282B007D417F /* AdviceViewCell.xib */,
 				5DFF7AA31E3BAF6000356C66 /* Main.storyboard */,
 				5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */,
 				5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */,
+				5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */,
 				5DFF7AAB1E3BAF6000356C66 /* Info.plist */,
 				5D1065FA1E3BE494007D417F /* pushconfig.plist */,
 			);
@@ -191,14 +221,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2F3B021E3C5ABD00B77FFE /* AdviceViewCell.xib in Resources */,
+				5D2F3B041E3C5ABD00B77FFE /* DashboardInfoViewCell.xib in Resources */,
 				5D1065FB1E3BE494007D417F /* pushconfig.plist in Resources */,
 				5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */,
-				5D10660B1E3C282B007D417F /* AdviceViewCell.xib in Resources */,
-				5D2F3AEF1E3C374B00B77FFE /* MonthPickerView.xib in Resources */,
 				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
-				5D10660F1E3C28BE007D417F /* AdviceHeaderViewCell.xib in Resources */,
-				5D1066031E3C220C007D417F /* DashboardInfoViewCell.xib in Resources */,
+				5D2F3B001E3C5ABD00B77FFE /* AdviceHeaderViewCell.xib in Resources */,
 				5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */,
+				5D2F3AFE1E3C5ABC00B77FFE /* MonthPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D10660E1E3C28BE007D417F /* AdviceHeaderViewCell.swift in Sources */,
 				5D1066071E3C25F5007D417F /* AdviceViewController.swift in Sources */,
 				5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */,
+				5D2F3B061E3C5B1A00B77FFE /* MonthOverviewModel.swift in Sources */,
+				5D2F3B081E3C5BBB00B77FFE /* Price.swift in Sources */,
 				5D1066051E3C25BE007D417F /* InfoViewController.swift in Sources */,
-				5D1066021E3C220C007D417F /* DashboardInfoViewCell.swift in Sources */,
-				5D10660A1E3C282B007D417F /* AdviceViewCell.swift in Sources */,
+				5D2F3AFF1E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift in Sources */,
 				5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */,
-				5D2F3AED1E3C371F00B77FFE /* MonthPickerView.swift in Sources */,
+				5D2F3B031E3C5ABD00B77FFE /* DashboardInfoViewCell.swift in Sources */,
+				5D2F3AFD1E3C5ABC00B77FFE /* MonthPickerView.swift in Sources */,
+				5D2F3B011E3C5ABD00B77FFE /* AdviceViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -373,7 +405,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

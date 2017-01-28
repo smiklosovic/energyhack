@@ -40,9 +40,13 @@ extension AdviceViewController: UITableViewDataSource {
         
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdviceHeaderViewCell", for: indexPath) as! AdviceHeaderViewCell
+            cell.selectionStyle = .none
+
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdviceViewCell", for: indexPath) as! AdviceViewCell
+            cell.selectionStyle = .none
+            
             return cell
         }
         
