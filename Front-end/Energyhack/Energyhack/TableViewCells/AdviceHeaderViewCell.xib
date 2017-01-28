@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AdviceHeaderViewCell" rowHeight="71" id="KGk-i7-Jjw" customClass="AdviceHeaderViewCell" customModule="Energyhack" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMR-k9-6yo">
+                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u85-zs-UMB">
+                        <rect key="frame" x="8" y="38" width="140" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="sKp-cH-WD5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qs9-e2-SNZ">
+                        <rect key="frame" x="172" y="37" width="140" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZMR-k9-6yo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="6Wm-3e-ttV"/>
+                    <constraint firstItem="ZMR-k9-6yo" firstAttribute="trailing" secondItem="Qs9-e2-SNZ" secondAttribute="trailing" id="CdZ-CV-dD8"/>
+                    <constraint firstItem="ZMR-k9-6yo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="TQ9-i7-D0B"/>
+                    <constraint firstItem="ZMR-k9-6yo" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="d28-sY-k7E"/>
+                    <constraint firstItem="u85-zs-UMB" firstAttribute="top" secondItem="ZMR-k9-6yo" secondAttribute="bottom" constant="9" id="h2J-Sj-f8F"/>
+                    <constraint firstItem="ZMR-k9-6yo" firstAttribute="leading" secondItem="u85-zs-UMB" secondAttribute="leading" id="oYt-5r-aYu"/>
+                    <constraint firstItem="Qs9-e2-SNZ" firstAttribute="leading" secondItem="u85-zs-UMB" secondAttribute="trailing" constant="24" id="prf-pt-q8V"/>
+                    <constraint firstItem="Qs9-e2-SNZ" firstAttribute="top" secondItem="ZMR-k9-6yo" secondAttribute="bottom" constant="8" symbolic="YES" id="wod-xR-is9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="currentAmountLabel" destination="u85-zs-UMB" id="Bzm-24-tHi"/>
+                <outlet property="predictedAmountLabel" destination="Qs9-e2-SNZ" id="AvY-Ad-ZQU"/>
+                <outlet property="titleLabel" destination="ZMR-k9-6yo" id="nHw-OJ-uWM"/>
+            </connections>
+            <point key="canvasLocation" x="47" y="123.5"/>
+        </tableViewCell>
+    </objects>
+</document>
