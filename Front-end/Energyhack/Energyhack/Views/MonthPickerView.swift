@@ -32,7 +32,7 @@ class MonthPickerView: UIView {
         doneButton.backgroundColor = UIColor.white
         doneButton.setTitleColor(UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0), for: .normal)
         
-        backgroundColor = UIColor(red: 126.0/255.0, green: 126.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+        backgroundColor = UIColor(red: 225.0/255.0, green: 226.0/255.0, blue: 226.0/255.0, alpha: 1.0)
 
         if let currentMonth = currentMonth {
             monthPicker.selectRow(currentMonth, inComponent: 0, animated: false)

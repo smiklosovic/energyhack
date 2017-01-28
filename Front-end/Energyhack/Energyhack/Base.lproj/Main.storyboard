@@ -88,6 +88,7 @@
                         <outlet property="tableView" destination="iTn-ve-evp" id="83w-vy-asU"/>
                         <segue destination="Qyt-Cb-ZlA" kind="push" identifier="dashboardInfoSegue" id="0HH-Lh-CJg"/>
                         <segue destination="MZA-2y-MhK" kind="modal" identifier="adviceScreenSegue" id="ZAq-OZ-PHb"/>
+                        <segue destination="nJK-5E-mpb" kind="push" identifier="graphInfoSegue" id="z21-mM-52L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CsR-TO-1BT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,6 +145,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t4W-tP-LUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="946.77661169415296"/>
+        </scene>
+        <!--Graph-->
+        <scene sceneID="XKL-Vw-ULS">
+            <objects>
+                <viewController id="nJK-5E-mpb" customClass="GraphViewController" customModule="Pythia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Ng-RI-9x1"/>
+                        <viewControllerLayoutGuide type="bottom" id="qrP-Bs-XcP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YD7-Xi-hGL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpc-9C-A7b" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Hpc-9C-A7b" secondAttribute="trailing" id="2mY-LV-Nhr"/>
+                            <constraint firstItem="Hpc-9C-A7b" firstAttribute="leading" secondItem="YD7-Xi-hGL" secondAttribute="leading" id="8dB-3c-Epv"/>
+                            <constraint firstItem="Hpc-9C-A7b" firstAttribute="top" secondItem="7Ng-RI-9x1" secondAttribute="bottom" id="Uob-9r-MDz"/>
+                            <constraint firstItem="Hpc-9C-A7b" firstAttribute="bottom" secondItem="qrP-Bs-XcP" secondAttribute="top" id="a6A-Rh-mso"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Graph" id="g37-49-9Bj"/>
+                    <connections>
+                        <outlet property="chartView" destination="Hpc-9C-A7b" id="y4s-1a-INP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="971-Lg-0C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1454" y="947"/>
         </scene>
         <!--Information-->
         <scene sceneID="l44-eC-pB4">

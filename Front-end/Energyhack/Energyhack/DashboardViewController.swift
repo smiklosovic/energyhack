@@ -105,7 +105,7 @@ class DashboardViewController: UIViewController {
         if let refreshControl = tableView.refreshControl {
             let formatter = DateFormatter()
             formatter.dateFormat = "MMM d, h:mm a"
-            let title = "Last update:\(formatter.string(from: Date()))" //[formatter stringFromDate:[NSDate date]]];
+            let title = "Last update:\(formatter.string(from: Date()))"
             let attrsDictionary =  [NSForegroundColorAttributeName:UIColor.black]
             let attributedTitle = NSAttributedString(string: title, attributes: attrsDictionary)
             refreshControl.attributedTitle = attributedTitle
@@ -441,21 +441,21 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch indexPath.section {
-//        case 0:
-//            performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
-//            break
-//        case 1:
-//            switch indexPath.row {
-//            case 0:
-//                performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
-//                break
-//            default:
-//                break
-//            }
-//        default:
-//            break
-//        }
+        switch indexPath.section {
+        case 0:
+            performSegue(withIdentifier: "graphInfoSegue", sender: tableView.cellForRow(at: indexPath))
+            break
+        case 1:
+            switch indexPath.row {
+            case 0:
+                performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
+                break
+            default:
+                break
+            }
+        default:
+            break
+        }
     }
 
 }

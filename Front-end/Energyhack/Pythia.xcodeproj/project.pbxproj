@@ -28,9 +28,10 @@
 		5D492C641E3CE66E000246BA /* ptregular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D492C5E1E3CE66E000246BA /* ptregular.ttf */; };
 		5D492C651E3CE66E000246BA /* graph.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D492C5F1E3CE66E000246BA /* graph.svg */; };
 		5D492C661E3CE66E000246BA /* info.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5D492C601E3CE66E000246BA /* info.svg */; };
-		5D492C671E3CE66E000246BA /* Phytia_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D492C611E3CE66E000246BA /* Phytia_logo.png */; };
 		5D492C691E3CEA3C000246BA /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D492C681E3CEA3C000246BA /* GraphViewController.swift */; };
 		5D492C6B1E3CED8D000246BA /* ReservedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D492C6A1E3CED8D000246BA /* ReservedModel.swift */; };
+		5D492C6D1E3CF429000246BA /* pithya_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D492C6C1E3CF429000246BA /* pithya_logo.png */; };
+		5D492C6F1E3CF474000246BA /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D492C6E1E3CF474000246BA /* GraphModel.swift */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
 		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
@@ -66,9 +67,10 @@
 		5D492C5E1E3CE66E000246BA /* ptregular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ptregular.ttf; sourceTree = "<group>"; };
 		5D492C5F1E3CE66E000246BA /* graph.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = graph.svg; sourceTree = "<group>"; };
 		5D492C601E3CE66E000246BA /* info.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = info.svg; sourceTree = "<group>"; };
-		5D492C611E3CE66E000246BA /* Phytia_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phytia_logo.png; sourceTree = "<group>"; };
 		5D492C681E3CEA3C000246BA /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		5D492C6A1E3CED8D000246BA /* ReservedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservedModel.swift; sourceTree = "<group>"; };
+		5D492C6C1E3CF429000246BA /* pithya_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pithya_logo.png; sourceTree = "<group>"; };
+		5D492C6E1E3CF474000246BA /* GraphModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
 		5DFF7A9C1E3BAF6000356C66 /* Pythia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pythia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				5D2F3B071E3C5BBB00B77FFE /* PriceModel.swift */,
 				5D2F3B151E3CC02D00B77FFE /* FinalModel.swift */,
 				5D492C6A1E3CED8D000246BA /* ReservedModel.swift */,
+				5D492C6E1E3CF474000246BA /* GraphModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -132,11 +135,11 @@
 		5D492C5A1E3CE66E000246BA /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				5D492C6C1E3CF429000246BA /* pithya_logo.png */,
 				5D492C5B1E3CE66E000246BA /* dropdown.svg */,
 				5D492C5C1E3CE66E000246BA /* fonts */,
 				5D492C5F1E3CE66E000246BA /* graph.svg */,
 				5D492C601E3CE66E000246BA /* info.svg */,
-				5D492C611E3CE66E000246BA /* Phytia_logo.png */,
 			);
 			name = assets;
 			path = ../../../assets;
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D492C6D1E3CF429000246BA /* pithya_logo.png in Resources */,
 				5D2F3B021E3C5ABD00B77FFE /* AdviceViewCell.xib in Resources */,
 				5D492C631E3CE66E000246BA /* ptbold.ttf in Resources */,
 				5D492C661E3CE66E000246BA /* info.svg in Resources */,
@@ -292,7 +296,6 @@
 				5D2F3B141E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib in Resources */,
 				5D2F3AFE1E3C5ABC00B77FFE /* MonthPickerView.xib in Resources */,
 				5D492C651E3CE66E000246BA /* graph.svg in Resources */,
-				5D492C671E3CE66E000246BA /* Phytia_logo.png in Resources */,
 				5D492C641E3CE66E000246BA /* ptregular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +369,7 @@
 				5D2F3AFD1E3C5ABC00B77FFE /* MonthPickerView.swift in Sources */,
 				5D2F3B131E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift in Sources */,
 				5D2F3B011E3C5ABD00B77FFE /* AdviceViewCell.swift in Sources */,
+				5D492C6F1E3CF474000246BA /* GraphModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
