@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import energyhack.configuration.DefaultTestAnnotations;
-import energyhack.service.EnergyHackPushMessageSender;
 
 /**
  * @author <a href="mailto:Stefan.Miklosovic@sk.ibm.com">Stefan Miklosovic</a>

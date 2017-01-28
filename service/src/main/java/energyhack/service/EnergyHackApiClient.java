@@ -3,10 +3,8 @@ package energyhack.service;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
 import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.http.MediaType.APPLICATION_FORM_URLENCODED;
-import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.web.util.UriComponentsBuilder.fromHttpUrl;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,9 +56,9 @@ public class EnergyHackApiClient {
         return doGet(getServiceUrl() + "suppliers/", Suppliers.class).getBody();
     }
 
-    ///
-    /// Meters
-    ///
+    //
+    // Meters
+    //
 
     public Meter getMeter(int meterID) {
         return doGet(getServiceUrl() + "meters/" + meterID, Meter.class).getBody();
@@ -80,7 +78,7 @@ public class EnergyHackApiClient {
 
     public Meters getMetersWithAddress(Address address) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("address", jsonSerializer.oneLine(jsonSerializer.objectToJson(address)))
             .build().encode().toUriString();
 
@@ -89,7 +87,7 @@ public class EnergyHackApiClient {
 
     public Meters getMetersWithTarif(int tarif) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("tarif", tarif)
             .build().encode().toUriString();
 
@@ -98,7 +96,7 @@ public class EnergyHackApiClient {
 
     public Meters getMetersWithSupplierID(int supplierID) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("supplierID", supplierID)
             .build().encode().toUriString();
 
@@ -107,7 +105,7 @@ public class EnergyHackApiClient {
 
     public Meters getMetersWithReservedCapacityMin(int reservedCapacityMin) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("reservedCapacityMin", reservedCapacityMin)
             .build().encode().toUriString();
 
@@ -116,7 +114,7 @@ public class EnergyHackApiClient {
 
     public Meters getMetersWithReservedCapacityMax(int reservedCapacityMax) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("reservedCapacityMax", reservedCapacityMax)
             .build().encode().toUriString();
 
@@ -133,7 +131,7 @@ public class EnergyHackApiClient {
 
     public Meters getMeasurementsFromTo(String from, String to) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("from", from)
             .queryParam("to", to)
             .build().encode().toUriString();
@@ -143,7 +141,7 @@ public class EnergyHackApiClient {
 
     public Meters getMeasurementsFromTo(String from, String to, MeterField... fields) {
 
-        final String uri = UriComponentsBuilder.fromHttpUrl(getServiceUrl() + "meters")
+        final String uri = fromHttpUrl(getServiceUrl() + "meters")
             .queryParam("from", from)
             .queryParam("to", to)
             .queryParam("fields", asList(fields).stream().map(MeterField::toString).collect(joining(",")))
