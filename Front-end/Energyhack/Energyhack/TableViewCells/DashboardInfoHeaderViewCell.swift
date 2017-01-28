@@ -16,9 +16,9 @@ class DashboardInfoHeaderViewCell: UITableViewCell {
     @IBOutlet weak var currentAmountValue: UILabel!
     @IBOutlet weak var predictedAmountValue: UILabel!
     
-    @IBOutlet weak var graphImageView: UIImageView!
-    @IBOutlet weak var infoImageView: UIImageView!
-    @IBOutlet weak var arrowImageView: UIImageView!
+    @IBOutlet weak var graphSVGView: UIView!
+    @IBOutlet weak var infoSVGView: UIView!
+    @IBOutlet weak var arrowSVGView: UIView!
     
     @IBOutlet weak var graphButton: UIButton!
     @IBOutlet weak var arrowButton: UIButton!

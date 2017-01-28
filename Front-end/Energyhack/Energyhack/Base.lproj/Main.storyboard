@@ -14,7 +14,7 @@
         <scene sceneID="sTF-QY-Crg">
             <objects>
                 <navigationController id="Zaa-06-hi2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2uS-uf-Hek">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2uS-uf-Hek">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -84,6 +84,7 @@
                     <navigationItem key="navigationItem" title="Pythia" id="0pf-zG-c4p"/>
                     <connections>
                         <outlet property="adviceCallerButton" destination="O7d-Jx-YN9" id="C7X-tv-OVO"/>
+                        <outlet property="datePickerCallerButton" destination="64N-9u-yup" id="6B2-kL-com"/>
                         <outlet property="tableView" destination="iTn-ve-evp" id="83w-vy-asU"/>
                         <segue destination="Qyt-Cb-ZlA" kind="push" identifier="dashboardInfoSegue" id="0HH-Lh-CJg"/>
                         <segue destination="MZA-2y-MhK" kind="modal" identifier="adviceScreenSegue" id="ZAq-OZ-PHb"/>

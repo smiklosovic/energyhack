@@ -10,11 +10,17 @@ import UIKit
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import Snowflake
 
 class DashboardViewController: UIViewController {
 
     var isRegistered = false
     var isDropdownOpen = false
+    
+    var dropdownArrowUpSVG: Document!
+    var dropdownArrowDownSVG: Document! // .init(fileName: "dropdown")!
+    var infoIconSVG: Document! //.init(fileName: "info")!
+    var graphSVG: Document! //.init(fileName: "graph")!
     
     var messages: Array<String> = []
     var datePickerView: MonthPickerView?
@@ -51,6 +57,11 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dropdownArrowUpSVG = Document.init(fileName: "dropdown")!
+        dropdownArrowDownSVG = Document.init(fileName: "dropdown")!
+        infoIconSVG = Document.init(fileName: "info")!
+        graphSVG = Document.init(fileName: "graph")!
         
         NotificationCenter.default.addObserver(self, selector: #selector(DashboardViewController.selectMonth), name: Notification.Name(rawValue:"current_month"), object: nil)
         currentMonth = 1
@@ -123,7 +134,6 @@ class DashboardViewController: UIViewController {
         isRegistered = true
         reloadEnergyData()
     }
-
     
     func errorRegistration() {
         let message = UIAlertController(title: "Registration Error!", message: "Please verify the provisionioning profile and the UPS details have been setup correctly.", preferredStyle:  .alert)        
@@ -158,7 +168,11 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        if let _ = monthOverviewModel {
+            return 2
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -195,7 +209,7 @@ extension DashboardViewController: UITableViewDataSource {
                 cell.backgroundColor = UIColor.white
 
                 var text = NSMutableAttributedString(string: "Spotreba")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.titleLabel.attributedText = text
                 cell.currentAmount.text = "ku dnešnému dňu:"
                 
@@ -208,14 +222,14 @@ extension DashboardViewController: UITableViewDataSource {
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 17.0/255.0, green: 107.0/255.0, blue: 180.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.predictedAmountValue.attributedText = text
                 
-//                cell.graphImageView = SVG
+                cell.graphSVGView.addSubview(graphSVG.svg.view(size: cell.graphSVGView.frame.size))
 //                cell.graphButton = action
                 
-//                cell.infoImageView = SVG
+                cell.infoSVGView.addSubview(infoIconSVG.svg.view(size: cell.infoSVGView.frame.size))
 //                cell.infoButton = action
                 
                 cell.arrowButton.isHidden = true
-                cell.arrowImageView.isHidden = true
+                cell.arrowSVGView.isHidden = true
                 cell.separatorLine.backgroundColor = UIColor(red: 212.0/255.0, green: 214.0/255.0, blue: 215.0/255.0, alpha: 1.0)
                 
                 cell.selectionStyle = .none
@@ -225,7 +239,7 @@ extension DashboardViewController: UITableViewDataSource {
                 cell.backgroundColor = UIColor.white
                 
                 var text = NSMutableAttributedString(string: "Pokuta za jalovú elektrinu")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.titleLabel.attributedText = text
                 
                 cell.currentAmount.text = "ku dnešnému dňu:"
@@ -239,14 +253,14 @@ extension DashboardViewController: UITableViewDataSource {
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 17.0/255.0, green: 107.0/255.0, blue: 180.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.predictedAmountValue.attributedText = text
                 
-                //                cell.graphImageView = SVG
+                cell.graphSVGView.addSubview(graphSVG.svg.view(size: cell.graphSVGView.frame.size))
                 //                cell.graphButton = action
                 
-                //                cell.infoImageView = SVG
+                cell.infoSVGView.addSubview(infoIconSVG.svg.view(size: cell.infoSVGView.frame.size))
                 //                cell.infoButton = action
                 
                 cell.arrowButton.isHidden = true
-                cell.arrowImageView.isHidden = true
+                cell.arrowSVGView.isHidden = true
                 cell.separatorLine.backgroundColor = UIColor(red: 212.0/255.0, green: 214.0/255.0, blue: 215.0/255.0, alpha: 1.0)
                 
                 cell.selectionStyle = .none
@@ -256,7 +270,7 @@ extension DashboardViewController: UITableViewDataSource {
                 cell.backgroundColor = UIColor.white
                 
                 var text = NSMutableAttributedString(string: "Pokuta za prekročenie rezervy")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.titleLabel.attributedText = text
                 
                 cell.currentAmount.text = "ku dnešnému dňu:"
@@ -270,14 +284,14 @@ extension DashboardViewController: UITableViewDataSource {
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 17.0/255.0, green: 107.0/255.0, blue: 180.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.predictedAmountValue.attributedText = text
                 
-                //                cell.graphImageView = SVG
+                cell.graphSVGView.addSubview(graphSVG.svg.view(size: cell.graphSVGView.frame.size))
                 //                cell.graphButton = action
                 
-                //                cell.infoImageView = SVG
+                cell.infoSVGView.addSubview(infoIconSVG.svg.view(size: cell.infoSVGView.frame.size))
                 //                cell.infoButton = action
                 
                 cell.arrowButton.isHidden = true
-                cell.arrowImageView.isHidden = true
+                cell.arrowSVGView.isHidden = true
                 cell.separatorLine.backgroundColor = UIColor(red: 212.0/255.0, green: 214.0/255.0, blue: 215.0/255.0, alpha: 1.0)
                 
                 cell.selectionStyle = .none
@@ -292,7 +306,7 @@ extension DashboardViewController: UITableViewDataSource {
                 cell.backgroundColor = UIColor.white
                 
                 var text = NSMutableAttributedString(string: "Celkovo")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 255.0/255.0, green: 110.0/255.0, blue: 80.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.titleLabel.attributedText = text
 
                 cell.currentAmount.text = "celkovo ku dnešnému dňu:"
@@ -307,15 +321,17 @@ extension DashboardViewController: UITableViewDataSource {
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 17.0/255.0, green: 107.0/255.0, blue: 180.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.predictedAmountValue.attributedText = text
                 
-                //                cell.graphImageView = SVG
+                cell.graphSVGView.addSubview(graphSVG.svg.view(size: cell.graphSVGView.frame.size))
                 //                cell.graphButton = action
                 
-                //                cell.infoImageView = SVG
+                cell.infoSVGView.addSubview(infoIconSVG.svg.view(size: cell.infoSVGView.frame.size))
                 //                cell.infoButton = action
+                
+                cell.arrowSVGView.addSubview(dropdownArrowUpSVG.svg.view(size: cell.arrowSVGView.frame.size))
                 
                 cell.arrowButton.isHidden = false
                 cell.arrowButton.addTarget(self, action: #selector(DashboardViewController.toggleSection), for: .touchUpInside)
-                cell.arrowImageView.isHidden = false
+                cell.arrowSVGView.isHidden = false
                 cell.separatorLine.backgroundColor = UIColor(red: 212.0/255.0, green: 214.0/255.0, blue: 215.0/255.0, alpha: 1.0)
                 
                 cell.selectionStyle = .none
@@ -323,58 +339,58 @@ extension DashboardViewController: UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardInfoViewCell", for: indexPath) as! DashboardInfoViewCell
                 
-                cell.backgroundColor = UIColor(red: 126.0/255.0, green: 126.0/255.0, blue: 126.0/255.0, alpha: 1.0)
+                cell.backgroundColor = UIColor(red: 248.0/255.0, green: 248.0/255.0, blue: 248.0/255.0, alpha: 1.0)
                 
                 var text = NSMutableAttributedString(string: "Činný odber")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 
                 cell.cinnyOdber.attributedText = text
                 cell.cinnyOdberNizkaTarifa.text = "Činný odber, nizka tarifa:"
                 
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.lowConsumptionCost!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.lowConsumptionCost!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.cinnyOdberNizkaTarifaValue.attributedText = text
                 cell.cinnyOdberVysokaTarifa.text = "Činný odber, výsoka tarifa:"
                 
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.highConsumptionCost!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.highConsumptionCost!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.cinnyOdberVysokaTarifaValue.attributedText = text
                 
                 text = NSMutableAttributedString(string: "Ostatné poplatky")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.ostatnePoplatky.attributedText = text
                 cell.odvodDoJadrovehoFondu.text = "Odvod do jadrového fondu:"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.nuclearFondCost!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.nuclearFondCost!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.odvodDoJadrovehoFonduValue.attributedText = text
                 cell.platbaZaSystemoveSluzby.text = "Platba za systémové služby:"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.systemServicesCost!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.systemServicesCost!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.platbaZaSystemoveSluzbyValue.attributedText = text
                 cell.platbaZaPrevadzkovanieSystemu.text = "Platba za prevádzkovanie systému:"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.supplierPart!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.supplierPart!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.platbaZaPrevadzkovanieSystemuValue.attributedText = text
                 cell.platbaZaStratyElektrinyPriDistribucii.text = "Platba za straty elektriny pri distribúcii"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.distributionLossCost!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.distributionLossCost!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.platbaZaStratyElektrinyPriDistribuciiValue.attributedText = text
                 
                 text = NSMutableAttributedString(string: "Celkovo")
-                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
+                text.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyle.styleSingle.rawValue, NSForegroundColorAttributeName:UIColor(red: 177.0/255.0, green: 177.0/255.0, blue: 177.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.celkovo.attributedText = text
                 
                 cell.distribucnaCast.text = "Distribučna čast':"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.distributionPart!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.distributionPart!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.distribucnaCastValue.attributedText = text
                 cell.dodavatelskaCast.text = "Dodávateĺská čast':"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.supplierPart!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.supplierPart!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.dodavatelskaCastValue.attributedText = text
                 
                 cell.spoluKuDnesnemuDnu.text = "Spolu, ku dnešnému dňu:"
-                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.price!)/100) €)")
+                text = NSMutableAttributedString(string: "\(round(100 * monthOverviewModel.finalPriceModel!.price!)/100) €")
                 text.addAttributes([NSForegroundColorAttributeName:UIColor(red: 77.0/255.0, green: 175.0/255.0, blue: 255.0/255.0, alpha: 1.0)], range: NSMakeRange(0, text.length))
                 cell.spoluKuDnesnemuValue.attributedText = text
                 
@@ -396,11 +412,11 @@ extension DashboardViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -425,20 +441,21 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0:
-            performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
-        case 1:
-            switch indexPath.row {
-            case 0:
-                performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
-            default:
-                break
-            }
-        default:
-            break
-        }
-        performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
+//        switch indexPath.section {
+//        case 0:
+//            performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
+//            break
+//        case 1:
+//            switch indexPath.row {
+//            case 0:
+//                performSegue(withIdentifier: "dashboardInfoSegue", sender: tableView.cellForRow(at: indexPath))
+//                break
+//            default:
+//                break
+//            }
+//        default:
+//            break
+//        }
     }
 
 }
