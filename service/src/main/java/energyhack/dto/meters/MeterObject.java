@@ -19,7 +19,7 @@ public class MeterObject {
     private Address address;
 
     @JsonProperty
-    private int reservedCapacity;
+    private double reservedCapacity;
 
     @JsonProperty
     private Supplier supplier;

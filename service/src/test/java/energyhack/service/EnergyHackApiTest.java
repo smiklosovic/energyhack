@@ -4,7 +4,6 @@ import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import energyhack.dto.measurements.Measurements;
 import energyhack.dto.meters.MeterField;
-import energyhack.service.EnergyHackApiClient;
+import energyhack.model.Model;
 import energyhack.configuration.DefaultTestAnnotations;
 import energyhack.dto.distributor.Distributors;
 import energyhack.dto.meters.Meter;
@@ -128,6 +127,51 @@ public class EnergyHackApiTest {
 
     @Test
     public void testConsumptionCost() {
+        Meter meter = energyHackApiClient.getMeter(1);
 
+        Measurements measurementsFromTo = energyHackApiClient.getMeasurementsFromTo(meter.getMeter().getMeterID(),
+                                                                                    "01-2016", "01-2016");
+
+        Model model = new Model(meter.getMeter(), energyHackApiClient);
+
+        model.init();
+
+        // 1
+
+        double monthlyCostForConsumptionWithoutLoss = model.getMonthlyCostForConsumptionWithoutLoss(measurementsFromTo);
+
+        // 2
+
+        final double monthlyCostForConsumptionWithLoss = model.getMonthlyCostForConsumptionWithLoss(measurementsFromTo);
+
+        // 3
+
+        final double reservedCapacityCost = model.getReservedCapacityCost();
+
+        // 4
+
+        final double reservedCapacityOvershootCost = model.getReservedCapacityOvershootCost(measurementsFromTo);
+
+        // 5
+
+        final double leadingReactivePowerCost = model.getLeadingReactivePowerCost(measurementsFromTo);
+
+        // 6
+
+        final double laggingReactivePowerCost = model.getLaggingReactivePowerCost(measurementsFromTo);
+
+        // 7
+
+        final double octEcost = model.getOCTEcost(measurementsFromTo);
+
+        // 8
+
+        final double consumptionCost = model.getConsumptionCost(measurementsFromTo);
+
+        // 9 - tax
+
+        final double tax = model.getTax(measurementsFromTo);
+
+        System.out.println("end");
     }
 }
