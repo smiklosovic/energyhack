@@ -3,6 +3,7 @@ package energyhack.service;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toList;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,9 +40,11 @@ public class ConsumptionService {
                                                                                           from, from,
                                                                                           MeterField.CONSUMPTION);
 
+        DecimalFormat df = new DecimalFormat("#.##");
+
         final List<Double> collect = measurementsFromTo.getMeasurements()
             .stream()
-            .map(measurement -> measurement.getLowConsumptionSum() + measurement.getHighConsumptionSum())
+            .map(measurement -> Double.valueOf(df.format(measurement.getLowConsumptionSum() + measurement.getHighConsumptionSum())))
             .collect(toList());
 
         ConsumptionGraph consumptionGraph = new ConsumptionGraph();
