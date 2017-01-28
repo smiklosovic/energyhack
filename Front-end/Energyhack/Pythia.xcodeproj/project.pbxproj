@@ -19,19 +19,25 @@
 		5D2F3B031E3C5ABD00B77FFE /* DashboardInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */; };
 		5D2F3B041E3C5ABD00B77FFE /* DashboardInfoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */; };
 		5D2F3B061E3C5B1A00B77FFE /* MonthOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */; };
-		5D2F3B081E3C5BBB00B77FFE /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B071E3C5BBB00B77FFE /* Price.swift */; };
+		5D2F3B081E3C5BBB00B77FFE /* PriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B071E3C5BBB00B77FFE /* PriceModel.swift */; };
 		5D2F3B0F1E3CA38F00B77FFE /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3B0E1E3CA38F00B77FFE /* assets */; };
+		5D2F3B131E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B111E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift */; };
+		5D2F3B141E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F3B121E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib */; };
+		5D2F3B161E3CC02D00B77FFE /* FinalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F3B151E3CC02D00B77FFE /* FinalModel.swift */; };
 		5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */; };
 		5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA11E3BAF6000356C66 /* DashboardViewController.swift */; };
 		5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA31E3BAF6000356C66 /* Main.storyboard */; };
 		5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */; };
 		5DFF7AAA1E3BAF6000356C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFF7AA81E3BAF6000356C66 /* LaunchScreen.storyboard */; };
+		8F91BA212F9FC5ADD8D41738 /* Pods_Pythia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F3337FEE42649365F80F18 /* Pods_Pythia.framework */; };
 		C02796CF0A40AD4E7DF3BB17 /* Pods_Energyhack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01F3337FEE42649365F80F18 /* Pods_Pythia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pythia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Energyhack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.debug.xcconfig"; sourceTree = "<group>"; };
+		48AC6F5141A262EB0A3A8380 /* Pods-Pythia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pythia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pythia/Pods-Pythia.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1065FA1E3BE494007D417F /* pushconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = pushconfig.plist; sourceTree = "<group>"; };
 		5D1066041E3C25BE007D417F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		5D1066061E3C25F5007D417F /* AdviceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdviceViewController.swift; sourceTree = "<group>"; };
@@ -44,8 +50,11 @@
 		5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInfoViewCell.swift; sourceTree = "<group>"; };
 		5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoViewCell.xib; sourceTree = "<group>"; };
 		5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthOverviewModel.swift; sourceTree = "<group>"; };
-		5D2F3B071E3C5BBB00B77FFE /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		5D2F3B071E3C5BBB00B77FFE /* PriceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceModel.swift; sourceTree = "<group>"; };
 		5D2F3B0E1E3CA38F00B77FFE /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = ../../../assets; sourceTree = "<group>"; };
+		5D2F3B111E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInfoHeaderViewCell.swift; sourceTree = "<group>"; };
+		5D2F3B121E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardInfoHeaderViewCell.xib; sourceTree = "<group>"; };
+		5D2F3B151E3CC02D00B77FFE /* FinalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalModel.swift; sourceTree = "<group>"; };
 		5DDF5F2F1E3BD1EB00E160DD /* Energyhack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Energyhack.entitlements; sourceTree = "<group>"; };
 		5DFF7A9C1E3BAF6000356C66 /* Pythia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pythia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFF7A9F1E3BAF6000356C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +63,7 @@
 		5DFF7AA61E3BAF6000356C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DFF7AA91E3BAF6000356C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DFF7AAB1E3BAF6000356C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61B531C8E71313E30272F4E7 /* Pods-Pythia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pythia.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pythia/Pods-Pythia.release.xcconfig"; sourceTree = "<group>"; };
 		86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Energyhack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02796CF0A40AD4E7DF3BB17 /* Pods_Energyhack.framework in Frameworks */,
+				8F91BA212F9FC5ADD8D41738 /* Pods_Pythia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +98,8 @@
 				5D2F3AF91E3C5ABC00B77FFE /* AdviceViewCell.xib */,
 				5D2F3AFA1E3C5ABC00B77FFE /* DashboardInfoViewCell.swift */,
 				5D2F3AFB1E3C5ABC00B77FFE /* DashboardInfoViewCell.xib */,
+				5D2F3B111E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift */,
+				5D2F3B121E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -95,7 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				5D2F3B051E3C5B1A00B77FFE /* MonthOverviewModel.swift */,
-				5D2F3B071E3C5BBB00B77FFE /* Price.swift */,
+				5D2F3B071E3C5BBB00B77FFE /* PriceModel.swift */,
+				5D2F3B151E3CC02D00B77FFE /* FinalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,6 +158,8 @@
 			children = (
 				3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */,
 				86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */,
+				48AC6F5141A262EB0A3A8380 /* Pods-Pythia.debug.xcconfig */,
+				61B531C8E71313E30272F4E7 /* Pods-Pythia.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -152,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF71882C41C0E5938FF3218 /* Pods_Energyhack.framework */,
+				01F3337FEE42649365F80F18 /* Pods_Pythia.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,6 +249,7 @@
 				5DFF7AA71E3BAF6000356C66 /* Assets.xcassets in Resources */,
 				5D2F3B001E3C5ABD00B77FFE /* AdviceHeaderViewCell.xib in Resources */,
 				5DFF7AA51E3BAF6000356C66 /* Main.storyboard in Resources */,
+				5D2F3B141E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.xib in Resources */,
 				5D2F3AFE1E3C5ABC00B77FFE /* MonthPickerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,7 +269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pythia/Pods-Pythia-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F9535BB281C1F6256BFC067 /* [CP] Embed Pods Frameworks */ = {
@@ -266,7 +284,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Energyhack/Pods-Energyhack-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pythia/Pods-Pythia-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88F3AD959E887F473756A94E /* [CP] Check Pods Manifest.lock */ = {
@@ -293,13 +311,15 @@
 			files = (
 				5D1066071E3C25F5007D417F /* AdviceViewController.swift in Sources */,
 				5DFF7AA21E3BAF6000356C66 /* DashboardViewController.swift in Sources */,
+				5D2F3B161E3CC02D00B77FFE /* FinalModel.swift in Sources */,
 				5D2F3B061E3C5B1A00B77FFE /* MonthOverviewModel.swift in Sources */,
-				5D2F3B081E3C5BBB00B77FFE /* Price.swift in Sources */,
+				5D2F3B081E3C5BBB00B77FFE /* PriceModel.swift in Sources */,
 				5D1066051E3C25BE007D417F /* InfoViewController.swift in Sources */,
 				5D2F3AFF1E3C5ABC00B77FFE /* AdviceHeaderViewCell.swift in Sources */,
 				5DFF7AA01E3BAF6000356C66 /* AppDelegate.swift in Sources */,
 				5D2F3B031E3C5ABD00B77FFE /* DashboardInfoViewCell.swift in Sources */,
 				5D2F3AFD1E3C5ABC00B77FFE /* MonthPickerView.swift in Sources */,
+				5D2F3B131E3CAD0300B77FFE /* DashboardInfoHeaderViewCell.swift in Sources */,
 				5D2F3B011E3C5ABD00B77FFE /* AdviceViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +439,7 @@
 		};
 		5DFF7AAF1E3BAF6000356C66 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3379363AC7A6FEC29F95DA44 /* Pods-Energyhack.debug.xcconfig */;
+			baseConfigurationReference = 48AC6F5141A262EB0A3A8380 /* Pods-Pythia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Energyhack/Energyhack.entitlements;
@@ -434,7 +454,7 @@
 		};
 		5DFF7AB01E3BAF6000356C66 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86B4344D245FF2FADE40CD90 /* Pods-Energyhack.release.xcconfig */;
+			baseConfigurationReference = 61B531C8E71313E30272F4E7 /* Pods-Pythia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Energyhack/Energyhack.entitlements;

@@ -8,15 +8,15 @@
 
 import ObjectMapper
 
-class Price: Mappable {
+class PriceModel: Mappable {
     
-    var amount: Float?
+    var price: Float?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        amount <- map["price"]
+        price <- map["price"]
     }
 
 }

@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,15 +39,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iTn-ve-evp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="604"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7d-Jx-YN9">
-                                <rect key="frame" x="188" y="605" width="187" height="62"/>
+                                <rect key="frame" x="0.0" y="605" width="375" height="62"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.7725490196" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="187" id="uyp-7U-o5r"/>
-                                </constraints>
                                 <state key="normal" title="Button 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -57,41 +52,38 @@
                                     <action selector="presentAdviceVC" destination="gVa-z3-FEw" eventType="touchUpInside" id="670-Fe-EQl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZB-Ss-auA">
-                                <rect key="frame" x="0.0" y="605" width="187" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64N-9u-yup">
+                                <rect key="frame" x="0.0" y="64" width="375" height="62"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.7725490196" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="187" id="m8L-0m-fb7"/>
+                                    <constraint firstAttribute="height" constant="62" id="T54-lV-l2T"/>
                                 </constraints>
                                 <state key="normal" title="Button 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="presentDatePicker" destination="gVa-z3-FEw" eventType="touchUpInside" id="qTc-RI-Odr"/>
+                                    <action selector="presentDatePicker" destination="gVa-z3-FEw" eventType="touchUpInside" id="Wll-i9-J4N"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qZB-Ss-auA" firstAttribute="top" secondItem="O7d-Jx-YN9" secondAttribute="top" id="0Nk-Rv-A65"/>
-                            <constraint firstItem="O7d-Jx-YN9" firstAttribute="width" secondItem="qZB-Ss-auA" secondAttribute="width" id="2wF-9N-vD3"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="trailing" secondItem="O7d-Jx-YN9" secondAttribute="trailing" id="9d9-v7-IcJ"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="top" secondItem="dw7-6W-J8a" secondAttribute="bottom" constant="-64" id="H98-eM-okW"/>
-                            <constraint firstItem="qZB-Ss-auA" firstAttribute="baseline" secondItem="O7d-Jx-YN9" secondAttribute="firstBaseline" id="MZ1-AY-fU4"/>
-                            <constraint firstAttribute="trailing" secondItem="iTn-ve-evp" secondAttribute="trailing" id="Now-Bu-TQ8"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="centerY" secondItem="No6-y3-1P8" secondAttribute="centerY" constant="-31.5" id="VVu-xk-nJR"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="qZB-Ss-auA" secondAttribute="leading" id="dcm-pj-ELC"/>
-                            <constraint firstItem="O7d-Jx-YN9" firstAttribute="baseline" secondItem="qZB-Ss-auA" secondAttribute="firstBaseline" id="fL7-IA-bwD"/>
-                            <constraint firstItem="qZB-Ss-auA" firstAttribute="bottom" secondItem="9Og-VG-iQS" secondAttribute="top" id="jRC-rv-tSi"/>
-                            <constraint firstItem="qZB-Ss-auA" firstAttribute="top" secondItem="iTn-ve-evp" secondAttribute="bottom" constant="1" id="jp2-KG-KxN"/>
-                            <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="No6-y3-1P8" secondAttribute="leading" id="rEH-G1-GxB"/>
-                            <constraint firstItem="O7d-Jx-YN9" firstAttribute="leading" secondItem="qZB-Ss-auA" secondAttribute="trailing" constant="1" id="sl3-gb-VuX"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="trailing" secondItem="O7d-Jx-YN9" secondAttribute="trailing" id="5Mp-o8-ceu"/>
+                            <constraint firstItem="O7d-Jx-YN9" firstAttribute="bottom" secondItem="9Og-VG-iQS" secondAttribute="top" id="6BX-Wt-8zQ"/>
+                            <constraint firstAttribute="trailing" secondItem="iTn-ve-evp" secondAttribute="trailing" id="6OV-MS-fs4"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="64N-9u-yup" secondAttribute="leading" id="E5p-Ee-S0M"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="centerY" secondItem="No6-y3-1P8" secondAttribute="centerY" id="EJd-VU-6we"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="trailing" secondItem="64N-9u-yup" secondAttribute="trailing" id="FPr-YH-ydd"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="leading" secondItem="O7d-Jx-YN9" secondAttribute="leading" id="PDk-p6-iko"/>
+                            <constraint firstItem="iTn-ve-evp" firstAttribute="top" secondItem="64N-9u-yup" secondAttribute="top" id="TwC-cO-Yja"/>
+                            <constraint firstItem="64N-9u-yup" firstAttribute="leading" secondItem="No6-y3-1P8" secondAttribute="leading" id="Wdi-JK-C10"/>
+                            <constraint firstItem="64N-9u-yup" firstAttribute="top" secondItem="dw7-6W-J8a" secondAttribute="bottom" id="cYO-Oh-6ny"/>
+                            <constraint firstItem="O7d-Jx-YN9" firstAttribute="top" secondItem="iTn-ve-evp" secondAttribute="bottom" constant="1" id="siQ-La-R6f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Pythia" id="0pf-zG-c4p"/>
                     <connections>
                         <outlet property="adviceCallerButton" destination="O7d-Jx-YN9" id="C7X-tv-OVO"/>
-                        <outlet property="datePickerCallerButton" destination="qZB-Ss-auA" id="bi6-48-oaq"/>
                         <outlet property="tableView" destination="iTn-ve-evp" id="83w-vy-asU"/>
                         <segue destination="Qyt-Cb-ZlA" kind="push" identifier="dashboardInfoSegue" id="0HH-Lh-CJg"/>
                         <segue destination="MZA-2y-MhK" kind="modal" identifier="adviceScreenSegue" id="ZAq-OZ-PHb"/>

@@ -10,18 +10,19 @@ import ObjectMapper
 
 class MonthOverviewModel: Mappable {
     
-    var consuptionPrice: Price?
-    var reactivePrice: Price?
-    var reservedPrice: Price?
-    var finalPrice: Price?
+    var consuptionPriceModel: PriceModel?
+    var reactivePriceModel: PriceModel?
+    var reservedPriceModel: PriceModel?
+    var finalPriceModel: FinalModel?
     
     required init?(map: Map) {
     }
     
     func mapping(map: Map) {
-        consuptionPrice <- map["consumption"]
-        reactivePrice <- map["reactive"]
-        reservedPrice <- map["reserved"]
-        finalPrice <- map["final"]
+        consuptionPriceModel <- map["consumption"]
+        reactivePriceModel <- map["reactive"]
+        reservedPriceModel <- map["reserved"]
+        finalPriceModel <- map["final"]
     }
+    
 }

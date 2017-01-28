@@ -3,9 +3,13 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 use_frameworks!
 
-target "Energyhack" do
+target "Pythia" do
  pod 'AeroGear-Push-Swift'
  pod 'Alamofire'
  pod 'AlamofireObjectMapper', '~> 4.0'
- pod 'PKHUD', '~> 4.0'
+ pod 'SVGPath'
+ pod 'Charts'
+ pod "Macaw"
+ pod 'Reindeer', git: 'https://github.com/onmyway133/Reindeer'
+ pod 'Snowflake', git: 'https://github.com/onmyway133/Snowflake'
 end
